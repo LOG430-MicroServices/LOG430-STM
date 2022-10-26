@@ -6,50 +6,78 @@ Component "Main : Authentication Microservice" <<Server>> {
   portin "System Status" as SystemStatus
   portin "System Clock" as SystemClock
   portin "Client Services" as ClientServices
+  portin "OS Commands" as MOSCommands
   portout "Data Access" as DataAccess
-  portout "Redundancy Services" as RedundancyServicesMain
+  portout "Out Redundancy Services" as RedundancyServicesMain
 
-  Component ": Load Balancer" as LoadBalancer
-  Component ": Cache" as Cache
-  Component ": Cache Service" as CacheService
-  Component ": Client Controller" as ClientController
-  Component ": Monitoring Service" as MonitoringService
-  Component ": Heartbeat Service" as HeartbeatService
-  Component ": Database Service" as DatabaseService
-  Component ": Firewall" as Firewall {
-    portin Requests
-    portout SafeRequests
+  Component ": Load Balancer" as LoadBalancer {
+    portin "Request Rate" as LBRequestRate
+    portout "Workers" as LBWorkers
+  }
+  Component ": Cache" as Cache {
+    portin "Manage" as CacheManage
+  }
+  Component ": Cache Service" as CacheService {
+    portin "Current Time" as CSCurrentTime
+    portout "Cache Access" as CSCacheAccess
+  }
+  Component ": Client Controller" as ClientController {
+    portin "Requests" as CCRequests
+    portout "Cache Access" as CCCache
+    portout "Worker" as CCWorker
+  }
+  Component ": Monitoring Service" as MonitoringService {
+    portin "Requests" as MSRequests
+    portin "System Status" as MSSystemStatus
+    portout "Request Rate" as MSRequestRate
+  }
+  Component ": Heartbeat Service" as HeartbeatService {
+    portin "Current Time" as HBSCurrentTime
+    portout "Heartbeat" as HBSHeartbeat
+  }
+  Component ": Database Service" as DatabaseService {
+    portin "Clients" as DSClients
+    portout "Connection" as DSConnection
+    portout "User Data" as DSUserData
+  }
+  Component ": Request Filter" as RequestFilter {
+    portin "Requests" as RFRequests
+    portout "Safe Requests" as RFSafeRequests
   }
   Collections ": Worker" as Worker
   Collections ": Database Connection" as DatabaseConnection
 }
 
-ClientServices -- Requests
-SafeRequests -- ClientController
+ClientServices --> RFRequests
+RFSafeRequests -(0- CCRequests : "<<Route>>"
+RFSafeRequests -(0- MSRequests : "<<Inform>>"
 
-ClientController -(0- Cache : "<<Fetch-Update>>"
-CacheService -(0-- Cache : "<<Invalidate>>"
-SystemClock --> CacheService
-SystemClock "Current Time" --> HeartbeatService
-SystemStatus "System Status" --> MonitoringService
-ClientController -(0- MonitoringService : "<<Inform>>"
-MonitoringService -(0- LoadBalancer : "<<Inform>>"
-LoadBalancer "Leader" --> "Worker" Worker : "<<Create-Destroy>>"
-ClientController -(0- Worker : "<<Call>>"
-DatabaseService --> DatabaseConnection : "<<Connects to>>"
-Worker "Store" -(0- "Items" DatabaseService : "<<Read-Write>>"
-DatabaseService --> "User Data" DataAccess
-HeartbeatService "Heartbeat" --> RedundancyServicesMain
+CCCache -(0- CacheManage : "<<Fetch/Update>>"
+CSCacheAccess -(0-- CacheManage : "<<Invalidate>>"
+SystemClock -- CSCurrentTime
+SystemClock -- HBSCurrentTime
+SystemStatus -- MSSystemStatus
+MSRequestRate -(0- LBRequestRate : "<<Inform>>"
+LBWorkers -- "Leader" Worker
+CCWorker -(0- Worker : "<<Call>>"
+DSConnection -- DatabaseConnection
+Worker "Store" -(0- DSClients : "<<Read/Write>>"
+DSUserData --> DataAccess
+HBSHeartbeat --> RedundancyServicesMain
 
 DataAccess -- ClientDatabase
 
 Component "Copy : Authentication Microservice" {
-  portin "Redundancy Services" as RedundancyServicesCopy
-  Component ": Redundancy Controller" as RedundancyController
+  portin "In Redundancy Services" as RedundancyServicesCopy
+  portout "OS Commands" as COSCommands
+
+  Component ": Redundancy Controller" as RedundancyController {
+    portin "Heartbeat" as RCHeartbeat
+    portout "OS Commands" as RCOSCommands
+  }
 }
 
-RedundancyServicesCopy "Heartbeat" --> RedundancyController
-
-RedundancyServicesMain --> RedundancyServicesCopy : HTTP
+RedundancyServicesCopy --> RCHeartbeat
+RCOSCommands --> COSCommands : "<<Kill/Spawn>>""
 
 @enduml
