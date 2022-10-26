@@ -1,0 +1,55 @@
+@startuml Authentication Service - Components and Connectors
+
+Database "Client Database" as ClientDatabase
+
+Component "Main : Authentication Microservice" <<Server>> {
+  portin "System Status" as SystemStatus
+  portin "System Clock" as SystemClock
+  portin "Client Services" as ClientServices
+  portout "Data Access" as DataAccess
+  portout "Redundancy Services" as RedundancyServicesMain
+
+  Component ": Load Balancer" as LoadBalancer
+  Component ": Cache" as Cache
+  Component ": Cache Service" as CacheService
+  Component ": Client Controller" as ClientController
+  Component ": Monitoring Service" as MonitoringService
+  Component ": Heartbeat Service" as HeartbeatService
+  Component ": Database Service" as DatabaseService
+  Component ": Firewall" as Firewall {
+    portin Requests
+    portout SafeRequests
+  }
+  Collections ": Worker" as Worker
+  Collections ": Database Connection" as DatabaseConnection
+}
+
+ClientServices -- Requests
+SafeRequests -- ClientController
+
+ClientController -(0- Cache : "<<Fetch-Update>>"
+CacheService -(0-- Cache : "<<Invalidate>>"
+SystemClock --> CacheService
+SystemClock "Current Time" --> HeartbeatService
+SystemStatus "System Status" --> MonitoringService
+ClientController -(0- MonitoringService : "<<Inform>>"
+MonitoringService -(0- LoadBalancer : "<<Inform>>"
+LoadBalancer "Leader" --> "Worker" Worker : "<<Create-Destroy>>"
+ClientController -(0- Worker : "<<Call>>"
+DatabaseService --> DatabaseConnection : "<<Connects to>>"
+Worker "Store" -(0- "Items" DatabaseService : "<<Read-Write>>"
+DatabaseService --> "User Data" DataAccess
+HeartbeatService "Heartbeat" --> RedundancyServicesMain
+
+DataAccess -- ClientDatabase
+
+Component "Copy : Authentication Microservice" {
+  portin "Redundancy Services" as RedundancyServicesCopy
+  Component ": Redundancy Controller" as RedundancyController
+}
+
+RedundancyServicesCopy "Heartbeat" --> RedundancyController
+
+RedundancyServicesMain --> RedundancyServicesCopy : HTTP
+
+@enduml
