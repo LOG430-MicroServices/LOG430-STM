@@ -3,9 +3,9 @@
 Database "Client Database" as ClientDatabase
 
 Component "Main : Authentication Microservice" <<Server>> {
-  portin "System Status" as SystemStatus
-  portin "System Clock" as SystemClock
   portin "Client Services" as ClientServices
+  portin "System Clock" as SystemClock
+  portin "System Status" as SystemStatus
   portin "OS Commands" as MOSCommands
   portout "Data Access" as DataAccess
   portout "Out Redundancy Services" as RedundancyServicesMain
@@ -37,8 +37,8 @@ Component "Main : Authentication Microservice" <<Server>> {
   }
   Component ": Database Service" as DatabaseService {
     portin "Clients" as DSClients
-    portout "Connection" as DSConnection
     portout "User Data" as DSUserData
+    portout "Connection" as DSConnection
   }
   Component ": Request Filter" as RequestFilter {
     portin "Requests" as RFRequests
@@ -50,7 +50,7 @@ Component "Main : Authentication Microservice" <<Server>> {
 
 ClientServices --> RFRequests
 RFSafeRequests -(0- CCRequests : "<<Route>>"
-RFSafeRequests -(0- MSRequests : "<<Inform>>"
+RFSafeRequests -(0-- MSRequests : "<<Inform>>"
 
 CCCache -(0- CacheManage : "<<Fetch/Update>>"
 CSCacheAccess -(0-- CacheManage : "<<Invalidate>>"
@@ -65,7 +65,7 @@ Worker "Store" -(0- DSClients : "<<Read/Write>>"
 DSUserData --> DataAccess
 HBSHeartbeat --> RedundancyServicesMain
 
-DataAccess -- ClientDatabase
+ClientDatabase -- DataAccess
 
 Component "Copy : Authentication Microservice" {
   portin "In Redundancy Services" as RedundancyServicesCopy
