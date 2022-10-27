@@ -1,22 +1,4 @@
-﻿
-<style>
-    .concept {
-        width: 1000%;
-        text-align: center;
-    }
-    .concept th {
-        background: grey;
-        word-wrap: break-word;
-        text-align: center;
-    }
-    .disponibilite tr:nth-child(1) { background: orange; }
-    .performance tr:nth-child(2) { background: orange; }
-    .securite tr:nth-child(3) { background: orange; }
-    .usabilite tr:nth-child(1) { background: orange; }
-    .interoperabilite tr:nth-child(2) { background: orange; }
-    .modifiabilite tr:nth-child(3) { background: orange; }
-    .testabilite tr:nth-child(1) { background: orange; }    
-</style>
+
 # Documentation de l'architecture du laboratoire de LOG430
 - [Documentation de l'architecture du laboratoire de LOG430](#documentation-de-larchitecture-du-laboratoire-de-log430)
 - [Page titre](#page-titre)
