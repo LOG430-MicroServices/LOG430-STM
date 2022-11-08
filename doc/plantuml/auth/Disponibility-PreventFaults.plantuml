@@ -6,9 +6,9 @@ database ": Base de données" as db
 
 note over user, db : Tactique : Increase competence set
 activate auth
+user -> auth : signUp(username, password)
+auth -> auth : generateToken(username, password)
 opt Connexion perdue avec la base de données
-  user -> auth : signUp(username, password)
-  auth -> auth : generateToken(username, password)
   auth -x db : save(username, password, token)
   auth -> auth : saveLocal(username, password)
   auth --> user : token
