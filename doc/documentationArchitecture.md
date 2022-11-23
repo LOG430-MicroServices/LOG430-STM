@@ -738,18 +738,18 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
 
 ## ADD-[Performance](#rdaq-performance)
-   |Identifiant|Description|
-  |-----------|------------|
-  |[CU01-P1](#cu01-p1-performance) | 
-  |[CU02-P1](#cu02-p1-performance) | 
-  |[CU03-P1](#cu03-p1-performance) | 
-  |[CU04-P1](#cu04-p1-performance) | 
-  |[CU05-P1](#cu05-p1-performance) | 
-  |[CU06-P1](#cu06-p1-performance) | 
-  |[CU07-P1](#cu07-p1-performance) | 
-  |[CU08-P1](#cu08-p1-performance) | 
-  |[CU09-P1](#cu09-p1-performance) | 
-  |[CU10-P1](#cu10-p1-performance) | 
+  |Identifiant|Description|
+  |---------------------------------|--------------------------|
+  |[CU01-P1](#cu01-p1-performance) | N/A |
+  |[CU02-P1](#cu02-p1-performance) | N/A |
+  |[CU03-P1](#cu03-p1-performance) | N/A |
+  |[CU04-P1](#cu04-p1-performance) | Ce service est concerné |
+  |[CU05-P1](#cu05-p1-performance) | N/A |
+  |[CU06-P1](#cu06-p1-performance) | N/A |
+  |[CU07-P1](#cu07-p1-performance) | N/A |
+  |[CU08-P1](#cu08-p1-performance) | N/A |
+  |[CU09-P1](#cu09-p1-performance) | N/A |
+  |[CU10-P1](#cu10-p1-performance) | N/A |
   
 ### ADD-[Contrôler la demande en ressources](#rdtq-contrôler-la-demande-en-ressources)
 <div class="concept performance">
