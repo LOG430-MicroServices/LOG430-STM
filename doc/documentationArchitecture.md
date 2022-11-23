@@ -777,16 +777,16 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
 | Identifiant                  | Description              |
 |------------------------------|--------------------------|
-| [CU01-P1](#cu01-t1-sécurité) | N/A                      |
-| [CU02-P1](#cu02-t1-sécurité) | N/A                      |
-| [CU03-P1](#cu03-t1-sécurité) | N/A                      |
-| [CU04-P1](#cu04-t1-sécurité) | Ce service est concerné. |
-| [CU05-P1](#cu05-t1-sécurité) | N/A                      |
-| [CU06-P1](#cu06-t1-sécurité) | N/A                      |
-| [CU07-P1](#cu07-t1-sécurité) | N/A                      |
-| [CU08-P1](#cu08-t1-sécurité) | N/A                      |
-| [CU09-P1](#cu09-t1-sécurité) | N/A                      |
-| [CU10-P1](#cu10-t1-sécurité) | N/A                      |
+| [CU01-P1](#cu01-s1-sécurité) | N/A                      |
+| [CU02-P1](#cu02-s1-sécurité) | N/A                      |
+| [CU03-P1](#cu03-s1-sécurité) | N/A                      |
+| [CU04-P1](#cu04-s1-sécurité) | Ce service est concerné. |
+| [CU05-P1](#cu05-s1-sécurité) | N/A                      |
+| [CU06-P1](#cu06-s1-sécurité) | N/A                      |
+| [CU07-P1](#cu07-s1-sécurité) | N/A                      |
+| [CU08-P1](#cu08-s1-sécurité) | N/A                      |
+| [CU09-P1](#cu09-s1-sécurité) | N/A                      |
+| [CU10-P1](#cu10-s1-sécurité) | N/A                      |
 
 ### ADD-[Détecter les attaques](#rdtq-détecter-les-attaques)
 <div class="concept securite">
