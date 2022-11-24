@@ -1040,36 +1040,36 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Performance](#add-performance)          
 
    ### [RDTQ-Contrôler la demande en ressources](#add-contrôler-la-demande-en-ressources)
-  <span style="color:red">nom de la tactique</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Diagramme de séquence</span>
+  ![ContrôlerLaDemande](https://github.com/LOG430-MicroServices/LOG430 STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Performance_ControlerLaDemande/Performance_ControlerLaDemande.png)
 
   ### [RDTQ-Gérer les ressources](#add-gérer-les-ressources)
-  <span style="color:red">nom de la tactique</span>
-
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  
+  <span>Diagramme de séquence</span>
+  ![GérerLesRessources](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Performance-G%C3%A9rerLesRessources/Performance-G%C3%A9rerLesRessources.png)
 
 ## RDAQ-[Sécurité](#add-sécurité)
 
   ### RDTQ-[Détecter les attaques](#add-détecter-les-attaques)
-   <span style="color:red">nom de la tactique</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Diagramme de séquence</span>
+  ![DétecterLesAttaques](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/S%C3%A9curit%C3%A9-D%C3%A9tecterLesAttaques/RDTQ%20S%C3%A9curit%C3%A9%20%20%20D%C3%A9tecter%20les%20attaques.png)
 
   ### [RDTQ-Résister aux attaques](#add-résister-aux-attaques)
-  <span style="color:red">nom de la tactique</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Diagramme de séquence</span>
+  ![RésisterAuxAttaques](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/S%C3%A9curit%C3%A9-R%C3%A9sisterAuxAttaques/RDTQ%20S%C3%A9curit%C3%A9%20%20%20R%C3%A9sister%20aux%20attaques.png)
 
   ### [RDTQ-Réagir aux attaques](#add-réagir-aux-attaques)
-  <span style="color:red">nom de la tactique</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Diagramme de séquence</span>
+  ![RéagirAuxAttaques](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Security-R%C3%A9agirAuxAttaques/RDTQ%20S%C3%A9curit%C3%A9%20%20%20R%C3%A9agir%20aux%20attaques.png)
 
   ### [RDTQ-Récupérer d'une attaque](#add-récupérer-dune-attaque)
-  <span style="color:red">nom de la tactique</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Diagramme de séquence</span>
+  ![RécupérerDesAttaques](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Security-R%C3%A9cup%C3%A9rerDesAttaques/RDTQ%20S%C3%A9curit%C3%A9%20%20%20R%C3%A9cup%C3%A9rer%20des%20attaques.png)
 
   ### Relation entre les éléments architectuale et les exigences de sécurité
 |Identifiant|Éléments|Description de la responabilité|
