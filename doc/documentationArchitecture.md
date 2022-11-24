@@ -946,8 +946,8 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 ### [**RDCU-CU03**](#cu03)  
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
-### **RDCU-CU04** -
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+### [**RDCU-CU04**](#cu04---veux-pouvoir-s'authentifier) - Veux pouvoir s'authentifier
+![DiagrammeSéquenceAuthentification](https://github.com/LOG430-MicroServices/LOG430-STM/blob/6e9ba49ebaee64a86782a90e38347d89530386c0/out/doc/plantuml/auth/DiagrammeS%C3%A9quence_CU04/DiagrammeS%C3%A9quence_CU04.png)
 ### **RDCU-CU05** - 
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 ### **RDCU-CU06** - 
