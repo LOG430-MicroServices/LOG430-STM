@@ -116,7 +116,7 @@
 
 # Scénario d'objectif d'affaire
 ## OA-1. Faciliter le recrutement des nouveaux chargés de laboratoire.
-<span style="color:red">Expliquer et démontrez comment votre architecture permet la réalisation de votre scénario d'objectif d'affaire. </span>
+<span>Notre architecture permet la réalisation du scénario qui a pour objectif de faciliter le recrutement de nouveaux chargés grâce à nos choix concernant l'usabilité. Nous avons choisi de séparer notre architecture en petits modules pour tous nos cas d'utilisation, ce qui rends la correction plus facile pour le chargé de laboratoire et lui permet de passer moins de temps à comprendre notre système. Nous croyons aussi que les diagrammes que nous avons réalisés pour chaque vue contribuent à faciliter la compréhension de nos choix d'architecture. Nous pensons que d'autres éléments faciliteraient le recrutement de nouveaux chargés de laboratoire. Notamment, la division du laboratoire en plusieurs étapes de réalisation. Cela éviterait que toutes les équipes ne demandent une correction complète durant les deux mêmes périodes. De plus, l'obligation d'intégrer le service d'autres équipes peut-être difficile à corriger si certaines équipes n'ont pas terminé leur laboratoire, nous croyons donc que d'offrir une alternative lorsque ce scénario se présente serait bénéfique pour recruter d'autres chargés.</span>
 
 
 ## OA-2. Validez si le transport par autobus est toujours plus rapide, peu importe l'heure de la journée
