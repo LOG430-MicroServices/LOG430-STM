@@ -1282,7 +1282,7 @@ AuthController ..> AuthDB
 |Application d'authentification|Élément logiciel: service d'authentification|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
 |Base de données|Élément physique: élément qui garde en mémoire les informations des utilisateurs|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
 >#### Diagramme de contexte
-[[https://github.com/LOG430-MicroServices/LOG430-STM/blob/17c5dda7fe515d8109fbdf4878c4a1e98c7a59a8/doc/assets/Vue%20Allocation%20-%20Contexte.png]]
+![VueAllocationContexte](https://github.com/LOG430-MicroServices/LOG430-STM/blob/d708c2993b83cf90a54987c07ce356bfcbbdd566/doc/assets/Vue%20Allocation%20-%20Contexte.png)
 >#### Guide de variabilité
 Dans cette vue d'allocation, il n'y a pas de variabilité évidente. Tous les éléments doivent obligatoirement être présents pour le bon fonctionnement du système, ils ne peuvent pas être changés et l'implémentation non plus. 
 >#### Raisonnement
