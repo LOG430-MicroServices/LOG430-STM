@@ -1272,7 +1272,7 @@ AuthController ..> AuthDB
 ## Vues architecturales de type allocation
 ### Vue #1 - Déploiement pour authentification
 >#### Présentation primaire
-TO ADD
+[[https://github.com/LOG430-MicroServices/LOG430-STM/blob/17c5dda7fe515d8109fbdf4878c4a1e98c7a59a8/doc/assets/VueAllocationDigramme.png]]
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
@@ -1282,7 +1282,7 @@ TO ADD
 |Application d'authentification|Élément logiciel: service d'authentification|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
 |Base de données|Élément physique: élément qui garde en mémoire les informations des utilisateurs|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
 >#### Diagramme de contexte
-TO ADD
+[[https://github.com/LOG430-MicroServices/LOG430-STM/blob/17c5dda7fe515d8109fbdf4878c4a1e98c7a59a8/doc/assets/Vue%20Allocation%20-%20Contexte.png]]
 >#### Guide de variabilité
 Dans cette vue d'allocation, il n'y a pas de variabilité évidente. Tous les éléments doivent obligatoirement être présents pour le bon fonctionnement du système, ils ne peuvent pas être changés et l'implémentation non plus. 
 >#### Raisonnement
