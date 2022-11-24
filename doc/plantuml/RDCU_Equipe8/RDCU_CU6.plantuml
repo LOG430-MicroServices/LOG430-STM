@@ -1,3 +1,4 @@
+@startuml
 title RDCU: Veux informer le mainteneur sur le status de vie des microservices
 skinparam Style strictuml
 
