@@ -1,0 +1,11 @@
+title RDCU: Veux informer le mainteneur sur le status de vie des microservices
+skinparam Style strictuml
+
+participant "ctrl:MS_Authentification" as ctrl
+participant "Ipublic:Monitoring" as Ipublic
+
+note left of Ipublic:**CU06** - Veux informer le mainteneur sur le status de vie des microservices
+ctrl -> Ipublic: reponse:get(https://localhost/v1/microservicestatus) 
+Ipublic -> ctrl: reponse: 200 ok
+
+@enduml
