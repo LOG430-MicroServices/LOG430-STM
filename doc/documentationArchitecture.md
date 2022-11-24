@@ -230,9 +230,6 @@ N/A
 *Localiser*
 - Découvrir le service
 
-**Commentaires:**
-
-- <span style="color:red">Quel sont vos remarques/commentaires par rapport à ce scénario</span>
 
 ### **CU03** - <span style="color:red">Vous devez proposer un nouveau cas d'utilisation</span>
 
@@ -356,8 +353,6 @@ N/A
 #### CU04-I1 [**Interopérabilité**](#add-interopérabilité)
 *Localiser*
 - Utilisation du service de découverte pour communiquer avec les autres micro services.
-
-**Commentaires:**
 
 
 ### **CU05** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
