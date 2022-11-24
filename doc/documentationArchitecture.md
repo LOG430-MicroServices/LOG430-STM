@@ -1270,17 +1270,26 @@ AuthController ..> AuthDB
 ### Vue #2...
 
 ## Vues architecturales de type allocation
-### Vue #1
+### Vue #1 - Déploiement pour authentification
 >#### Présentation primaire
+TO ADD
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
-|el1|responsabilité incluant les liens vers les diagrammes de séquence démontrant le fonctionnement de celui-ci|http://www.etsmtl.ca|
+|PC utilisateur (externe)|Élément physique: ordinateur d'un utilisateur qui se connecte au service|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
+|PC utilisateur (interne)|Élément physique: ordinateur d'un utilisateur qui utilise le service sur sa machine|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
+|Serveur|Élément physique: machine qui permet d'exécuter le service|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
+|Application d'authentification|Élément logiciel: service d'authentification|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
+|Base de données|Élément physique: élément qui garde en mémoire les informations des utilisateurs|[Vue architecturale de contexte](#vue-architecturale-de-contexte)|
 >#### Diagramme de contexte
+TO ADD
 >#### Guide de variabilité
+Dans cette vue d'allocation, il n'y a pas de variabilité évidente. Tous les éléments doivent obligatoirement être présents pour le bon fonctionnement du système, ils ne peuvent pas être changés et l'implémentation non plus. 
 >#### Raisonnement
+En ce qui a trait aux décisions par rapport à la vue allocation, ici, nous avons fait l'hypothèse qu'un seul serveur est suffisant pour supporter les deux microservices et tous les utilisateurs qui voudraient y accéder en même temps. Nous avons aussi assumé qu'étant donnée l'étendue très petite de ce service, une seule copie de la base de donnée serait utile.
+
 >#### Vues associées
-### Vue #2 ...
+[Vue architecturale de contexte](#vue-architecturale-de-contexte)
 
 
 # Conclusion
