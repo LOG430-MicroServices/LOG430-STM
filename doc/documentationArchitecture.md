@@ -1041,7 +1041,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 
    ### [RDTQ-Contrôler la demande en ressources](#add-contrôler-la-demande-en-ressources)
   
-  ![ContrôlerLaDemande](https://github.com/LOG430-MicroServices/LOG430 STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Performance_ControlerLaDemande/Performance_ControlerLaDemande.png)
+  ![ContrôlerLaDemande](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Performance_ControlerLaDemande/Performance_ControlerLaDemande.png)
 
   ### [RDTQ-Gérer les ressources](#add-gérer-les-ressources)
   
