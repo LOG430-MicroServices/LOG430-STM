@@ -1,4 +1,4 @@
-@startuml Convivialité : Supporter l'initiative de l'usager
+@startuml Chaos Monkey
 title Diagramme de séquence du CU02 - Chaos Monkey
 
 actor ": Utilisateur" as user
