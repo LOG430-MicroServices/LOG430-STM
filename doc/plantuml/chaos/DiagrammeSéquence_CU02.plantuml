@@ -1,0 +1,40 @@
+@startuml Convivialité : Supporter l'initiative de l'usager
+title Diagramme de séquence du CU02 - Chaos Monkey
+
+actor ": Utilisateur" as user
+participant ": Chaosmonkey" as chaos
+participant ": Service Registry" as services
+participant "Service1 : Microservice" as s1
+participant "Service2 : Microservice" as s2
+participant "Service3 : Microservice" as s3
+
+
+activate chaos
+activate services
+activate s1
+activate s2
+activate s3
+
+user -> chaos : getServices()
+chaos -> services : getServices()
+services --> chaos : services
+chaos --> user : services
+
+user -> chaos : kill([service1, service2, service3])
+activate chaos #orange
+chaos -> s1 : kill()
+destroy s1
+chaos -> chaos : updateTask(taskId, 1)
+chaos -> s2 : kill()
+chaos -> chaos : updateTask(taskId, 2)
+destroy s2
+chaos -> s3 : kill()
+chaos -> chaos : updateTask(taskId, 3)
+destroy s3
+deactivate chaos
+
+user -> chaos : getTaskStatus(taskId)
+chaos -> user : taskStatus : 3/3
+
+
+@enduml
