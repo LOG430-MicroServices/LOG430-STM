@@ -206,19 +206,29 @@ Documenter l'ensemble des attributs de qualité qui s'appliquent à ce scénario
 Documenter l'ensemble des attributs de qualité qui s'appliquent à ce scénario en terme d'objectif et de mesure.    
 
 #### CU02-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+*Prévention de fautes*
+- Augmenter les compétences
+
 #### CU02-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+N/A
 #### CU02-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+N/A
 #### CU02-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+N/A
 #### CU02-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+N/A
 #### CU02-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+*Supporter l'initiative de l'usager*
+- "Aggregate"
+
+*Supporter l'initiative du système*
+- Maintenir le modèle de tâches
 #### CU02-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+*Gérer les interfaces*
+- "Tailor interface"
+
+*Localiser*
+- Découvrir le service
 
 **Commentaires:**
 
