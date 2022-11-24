@@ -1272,7 +1272,7 @@ AuthController ..> AuthDB
 ## Vues architecturales de type allocation
 ### Vue #1 - Déploiement pour authentification
 >#### Présentation primaire
-[[https://github.com/LOG430-MicroServices/LOG430-STM/blob/17c5dda7fe515d8109fbdf4878c4a1e98c7a59a8/doc/assets/VueAllocationDigramme.png]]
+![VueAllocationDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/17c5dda7fe515d8109fbdf4878c4a1e98c7a59a8/doc/assets/VueAllocationDigramme.png)
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
