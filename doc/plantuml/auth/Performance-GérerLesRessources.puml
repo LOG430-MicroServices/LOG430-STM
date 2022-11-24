@@ -1,5 +1,5 @@
 @startuml
-title RDTQ Performance : Gérer les  ressources\nTactique : 
+title RDTQ Performance : Gérer les  ressources\nTactique : "Bound" la taille des files
 
 
 actor ": Utilisateur" as user
@@ -7,7 +7,7 @@ participant ": AuthController" as auth
 participant ": ValidationService" as val
 database ": MongoDB" as db
 
-note over user, db : Tactique : 
+note over user, db : Tactique : "Bound" la taille des files
 
 activate auth
 activate val
