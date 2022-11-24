@@ -120,7 +120,7 @@
 
 
 ## OA-2. Validez si le transport par autobus est toujours plus rapide, peu importe l'heure de la journée
-<span style="color:red">Expliquer et démontrez comment votre architecture permet la réalisation de votre scénario d'objectif d'affaire. </span>
+<span>Bien que notre équipe n'ai pas eu comme tâche de réaliser la comparaison des trajets, nous croyons que notre intégration de ce microservice facilite la réalisation de cet objectif d'affaire. En effet, les décisions que nous avons prises an réalisant nos microservices ont le potentiel de permettre au système d'être facilement modifié et de modifier l'itneraction avec d'autres services. Bien que cette fonction ne soit pas implémentée, nos choix architecturaux concernant la modifiabilité, soit de réduire le couplage et d'augmenter la cohésion, permettraient facilement d'ajouter des fonctions et donc, d'ajouter les éléments nécessaires à cet objectif d'affaire. </span>
 
 # Cas d'utilisations
 ### **CU01** - Veux comparer les temps de trajet.
