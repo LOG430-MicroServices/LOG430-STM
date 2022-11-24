@@ -54,91 +54,14 @@
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
     - [**RDCU-CU01** - Veux comparer les temps de trajet.](#rdcu-cu01---veux-comparer-les-temps-de-trajet)
-    @startuml
-title RDCU:  Veux comparer les temps de trajet
-skinparam Style strictuml
-actor "user:user" as ctrl
-participant "Ipublic:ServiceTrajet" as Ipublic
-note left of Ipublic:**CU01** - Veux comparer les temps de trajet.
-ctrl -> Ipublic: liste:get(https://portainer.10.194.33.156.nip.io/components/schemas/TrajetArray) 
-Ipublic -> ctrl: liste: tableau du temps de déplacement
-@endumlS
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
     - [**RDCU-CU04** -](#rdcu-cu04--)
-
-    - [**RDCU-CU05** -Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route](#rdcu-cu05--)
-    ```plantuml
-    @startuml
-title: RDCU: service discovery
-skinparam Style strictuml
-
-participant "ms:MS_Authentification" as ctrl
-participant "Ipublic:ServiceDiscovery" as Ipublic
-
-note left of Ipublic: **CU05** - Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route.
-
-ctrl -> Ipublic: reponse = Post(https://localhost/v1/components/schemas/Registration)
-Ipublic -> ctrl: reponse = 200
-
-ctrl -> Ipublic: msRoute = get(https://localhost/v1/components/schemas/route)
-Ipublic -> ctrl: msRoute = "route"
-
-@enduml
-    
-    - [**RDCU-CU06** -Veux informer le mainteneur sur le status de vie des microservices](#rdcu-cu06--)
-
-  @startuml
-title RDCU: Veux informer le mainteneur sur le status de vie des microservices
-skinparam Style strictuml
-
-participant "ctrl:MS_Authentification" as ctrl
-participant "Ipublic:Monitoring" as Ipublic
-
-note left of Ipublic:**CU06** - Veux informer le mainteneur sur le status de vie des microservices
-ctrl -> Ipublic: reponse:get(https://localhost/v1/microservicestatus) 
-Ipublic -> ctrl: reponse: 200 ok
-
-@enduml
-    - [**RDCU-CU07** -Veux pouvoir informer le mainteneur sur l’état interne d’un service](#rdcu-cu07--)
-    @startuml
-title RDCU: Veux pouvoir informer le mainteneur sur l’état interne d’un service
-skinparam Style strictuml
-
-participant "ctrl:MS_Authentification" as ctrl
-participant "Ipublic:Monitoring" as Ipublic
-
-note left of Ipublic:**CU07** - Veux pouvoir informer le mainteneur sur l’état interne d’un service
-ctrl -> Ipublic: message:get(https://localhost/v1/components/schemas/Subscribe) 
-Ipublic -> ctrl: message: "The service was subscribed"
-ctrl -> Ipublic: resource:get(https://localhost/v1/components/schemas/getresources) 
-Ipublic -> ctrl: resource: "json"
-
-@enduml
-    - [**RDCU-CU08** -Veux avoir le temps d’un trajet en autobus](#rdcu-cu08--)
-    @startuml
-title RDCU:  Veux avoir le temps d’un trajet en autobus
-skinparam Style strictuml
-actor "user:user" as ctrl
-participant "Ipublic:ServiceTrajet" as Ipublic
-note left of Ipublic:**CU08** - Veux avoir le temps d’un trajet en autobus.
-
-ctrl -> Ipublic: trajet : get(https://portainer.10.194.33.156.nip.io/components/schemas/Trajet)
-Ipublic -> ctrl:  trajet: "trajet le plus court"
-
-@enduml
-    - [**RDCU-CU09** -Veux avoir le temps de trajet en auto](#rdcu-cu09--)
-    @startuml
-title RDCU:  Veux avoir le temps d’un trajet en auto
-skinparam Style strictuml
-actor "user:user" as ctrl
-participant "Ipublic:ServiceTrajet" as Ipublic
-note left of Ipublic:**CU09** - Veux avoir le temps d’un trajet en auto.
-
-ctrl -> Ipublic: trajet : get(https://portainer.10.194.33.156.nip.io/components/schemas/Trajet)
-Ipublic -> ctrl:  trajet: "trajet le plus court"
-
-@enduml
+    - [**RDCU-CU05** -](#rdcu-cu05--)
+    - [**RDCU-CU06** -](#rdcu-cu06--)
+    - [**RDCU-CU07** -](#rdcu-cu07--)
+    - [**RDCU-CU08** -](#rdcu-cu08--)
+    - [**RDCU-CU09** -](#rdcu-cu09--)
     - [**RDCU-CU10** -](#rdcu-cu10--)
 - [Réalisation des attributs de qualité](#réalisation-des-attributs-de-qualité)
   - [RDAQ-Disponibilité](#rdaq-disponibilité)
@@ -1326,27 +1249,6 @@ AuthController ..> AuthDB
 ## Vues architecturales de type composant et connecteur
 ### Vue #1
 >#### Présentation primaire
-```plantuml
-@startuml
-
-title Diagramme de contexte C&C
-skinparam component {
-  backgroundColor<<Interne>> DarkKhaki
-  backgroundColor<<Exterme>> Green
-}
-actor User as u
- [Authentification_MS] as ms <<Interne>>
- [Chaos]  as ko <<Interne>> 
- [Database] as bd <<Interne>>
- () IPublic as i <<Exterme>>
- note bottom of i:IPublic est interface des microservices discovey, trajet et monitoring
-
-u   -right->  ms
-ms   -down->  i 
-ms   ->  bd 
-ko -up->  ms
-@enduml
-
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
@@ -1368,24 +1270,6 @@ ko -up->  ms
 
  |IserviceMonitoring| Interface à travers laquelle le micro service externe qui informe le mainteneur sur le status de vie des autres microservices est visible|CU6
 >#### Diagramme de contexte
-@startuml
-title Diagramme de contexte C&C
-skinparam component {
-  backgroundColor<<Interne>> DarkKhaki
-  backgroundColor<<Exterme>> Green
-}
-actor User as u
- [Authentification_MS] as ms <<Interne>>
- [Chaos]  as ko <<Interne>> 
- [Database] as bd <<Interne>>
- () IPublic as i <<Exterme>>
- note bottom of i:IPublic est interface des microservices discovey, trajet et monitoring
-
-u   -right->  ms
-ms   -down->  i 
-ms   ->  bd 
-ko -up->  ms
-@enduml
 
 >#### Guide de variabilité
 La vue composant connecteur, présente tous les éléments obligatoires pour faire fonctionner le système. Donc nous n’avons pas de variabilité.
