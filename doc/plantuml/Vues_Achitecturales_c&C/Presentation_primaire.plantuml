@@ -1,5 +1,6 @@
 
 @startuml
+title Présentation primaire C&C
 skinparam component {
   backgroundColor<<IMPLEMENTATION>> DarkKhaki
   backgroundColor<<Integration>> yellow
@@ -20,9 +21,9 @@ component Authentification-MS_Origniale as ms1 <<IMPLEMENTATION>>{
 
 k --> ms1
 k --> ms2
- ms1 ..> equipe4
- ms1 ..> equipe6
- ms1 ..> equipe8
+ ms1 ..> equipe4: HTTP
+ ms1 ..> equipe6 : HTTP
+ ms1 ..> equipe8 : HTTP
 ms1 --> IDatabase
 ms2 --> IDatabase
 IDatabase -- bd

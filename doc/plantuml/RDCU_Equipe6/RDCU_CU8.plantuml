@@ -1,0 +1,11 @@
+@startuml
+title RDCU:  Veux avoir le temps d’un trajet en autobus
+skinparam Style strictuml
+actor "user:user" as ctrl
+participant "Ipublic:ServiceTrajet" as Ipublic
+note left of Ipublic:**CU08** - Veux avoir le temps d’un trajet en autobus.
+
+ctrl -> Ipublic: trajet : get(https://portainer.10.194.33.156.nip.io/components/schemas/Trajet)
+Ipublic -> ctrl:  trajet: "trajet le plus court"
+
+@enduml

@@ -1,14 +1,15 @@
 @startuml
+title: RDCU: service discovery
 skinparam Style strictuml
-participant "ctrl:ControleurAuthentification_UI" as ctrl
+
+participant "ms:MS_Authentification" as ctrl
 participant "Ipublic:ServiceDiscovery" as Ipublic
 
-note left of ctrl: Controleur de session
--> ctrl: Register(String: token)
-note left of Ipublic: Expert qui dirige les requetes vers les autres microServices
+note left of Ipublic: **CU05** - Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route.
+
 ctrl -> Ipublic: reponse = Post(https://localhost/v1/components/schemas/Registration)
 Ipublic -> ctrl: reponse = 200
--> ctrl: Discover(Sting :msRoute)
+
 ctrl -> Ipublic: msRoute = get(https://localhost/v1/components/schemas/route)
 Ipublic -> ctrl: msRoute = "route"
 

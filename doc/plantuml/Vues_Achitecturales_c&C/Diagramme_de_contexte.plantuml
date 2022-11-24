@@ -1,19 +1,18 @@
 @startuml
+title Diagramme de contexte C&C
 skinparam component {
   backgroundColor<<Interne>> DarkKhaki
   backgroundColor<<Exterme>> Green
 }
 actor User as u
-
- [Authentification_UI] as ui <<Interne>>
  [Authentification_MS] as ms <<Interne>>
- [Database] as bd <<Interne>>
  [Chaos]  as ko <<Interne>> 
+ [Database] as bd <<Interne>>
  () IPublic as i <<Exterme>>
- note bottom of i:IPublic est interface des equipes 4,6 et 8
-u   ->  ui
-ui ->  ms
-ui ->  ko
+ note bottom of i:IPublic est interface des microservices discovey, trajet et monitoring
+
+u   -right->  ms
+ms   -down->  i 
 ms   ->  bd 
-ui   ->  i 
+ko -up->  ms
 @enduml
