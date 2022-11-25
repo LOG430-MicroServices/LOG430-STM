@@ -948,7 +948,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ### [**RDCU-CU01**](#cu01---veux-comparer-les-temps-de-trajet) - Veux comparer les temps de trajet.
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 ### [**RDCU-CU02**](#cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode) - Veux pouvoir mettre le chaos dans les services en mode.
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![DiagrammeSéquenceChaosMonkey](https://github.com/LOG430-MicroServices/LOG430-STM/blob/db770d083bcb9df3bec865126db4e2f82900424b/out/doc/plantuml/chaos/DiagrammeS%C3%A9quence_CU02/DiagrammeSequenceCU02.png)
 ### [**RDCU-CU03**](#cu03)  
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 ### [**RDCU-CU04**](#cu04---veux-pouvoir-s'authentifier) - Veux pouvoir s'authentifier
