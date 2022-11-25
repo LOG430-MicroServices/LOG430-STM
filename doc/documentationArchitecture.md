@@ -53,15 +53,15 @@
     - [ADD-Localiser](#add-localiser)
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
-    - [**RDCU-CU01** - Veux comparer les temps de trajet.](#rdcu-cu01---veux-comparer-les-temps-de-trajet)
+    - [**RDCU-CU01** - Veux comparer les temps de trajet.](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
     - [**RDCU-CU04** -](#rdcu-cu04--)
-    - [**RDCU-CU05** -](#rdcu-cu05--)
-    - [**RDCU-CU06** -](#rdcu-cu06--)
-    - [**RDCU-CU07** -](#rdcu-cu07--)
-    - [**RDCU-CU08** -](#rdcu-cu08--)
-    - [**RDCU-CU09** -](#rdcu-cu09--)
+    - [**RDCU-CU05** -Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe4/Sercice_discovery_rdcu/Sercice_discovery_rdcu.png)
+    - [**RDCU-CU06** -Veux informer le mainteneur sur le status de vie des microservices](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_CU6/RDCU_CU6.png)
+    - [**RDCU-CU07** -Veux pouvoir informer le mainteneur sur l’état interne d’un service (exemple l’état du CPU)](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_Service_Monitoring/RDCU_Service_Monitoring.png)
+    - [**RDCU-CU08** -Veux avoir le temps d’un trajet en autobus](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU8/RDCU_CU8.png)()
+    - [**RDCU-CU09** -Veux avoir le temps de trajet en auto](#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU9/RDCU_CU9.png)
     - [**RDCU-CU10** -](#rdcu-cu10--)
 - [Réalisation des attributs de qualité](#réalisation-des-attributs-de-qualité)
   - [RDAQ-Disponibilité](#rdaq-disponibilité)
@@ -1248,7 +1248,7 @@ AuthController ..> AuthDB
 
 ## Vues architecturales de type composant et connecteur
 ### Vue #1
->#### Présentation primaire
+>#### Présentation primaire[VueComposantConnecteurDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Presentation_primaire/Presentation_primaire.png)
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
@@ -1261,14 +1261,14 @@ AuthController ..> AuthDB
  |IserviceDiscovery!Interface à travers laquelle le micro service externe qui intercommunication entre microservices à l’aide d’une source unique de découverte de route est visible|CU5
  |IserviceTrajet|Interface à travers laquelle le micro service externe qui compare les temps de trajet est visible|CU1
  |IserviceMonitoring| Interface à travers laquelle le micro service externe qui informe le mainteneur sur le status de vie des autres microservices est visible|CU6
->#### Diagramme de contexte
+>#### Diagramme de contexte[VueComposantConnecteurDiagrammeContexte](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Diagramme_de_contexte/Diagramme_de_contexte.png)
 
 >#### Guide de variabilité
 La vue composant connecteur, présente tous les éléments obligatoires pour faire fonctionner le système. Donc nous n’avons pas de variabilité.
 >#### Raisonnement
 En ce qui concerne la vue composant et connecteur, nous avons pris pour hypothèse qu’on a une seule copie du micro service d’authentification qui reçoit les requetés provenant des utilisateurs et du micro service chaos. Dépendamment de la requête, il va soit interroger la base de données pour vérifier leur authenticité soit transférer la requête vers interface public qui lui connait tous les autres micro services externes associés. 
 >#### Vues associées
-
+[Document d'interface Authentification](interface-authentification.md)
 ### Vue #2...
 
 ## Vues architecturales de type allocation
