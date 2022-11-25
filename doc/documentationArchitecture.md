@@ -53,8 +53,7 @@
     - [ADD-Localiser](#add-localiser)
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
-    - [**RDCU-CU01** - Veux comparer les temps de trajet.]
-    !(#https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
+    - ![**RDCU-CU01** - Veux comparer les temps de trajet.](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
     - [**RDCU-CU04** -](#rdcu-cu04--)
@@ -1249,7 +1248,8 @@ AuthController ..> AuthDB
 
 ## Vues architecturales de type composant et connecteur
 ### Vue #1
->#### Présentation primaire[VueComposantConnecteurDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Presentation_primaire/Presentation_primaire.png)
+>#### Présentation primaire
+![VueComposantConnecteurDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Presentation_primaire/Presentation_primaire.png)
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
@@ -1270,7 +1270,7 @@ La vue composant connecteur, présente tous les éléments obligatoires pour fai
 >#### Raisonnement
 En ce qui concerne la vue composant et connecteur, nous avons pris pour hypothèse qu’on a une seule copie du micro service d’authentification qui reçoit les requetés provenant des utilisateurs et du micro service chaos. Dépendamment de la requête, il va soit interroger la base de données pour vérifier leur authenticité soit transférer la requête vers interface public qui lui connait tous les autres micro services externes associés. 
 >#### Vues associées
-![Document d'interface Authentification](interface-authentification.md)
+[Document d'interface Authentification](interface-authentification.md)
 ### Vue #2...
 
 ## Vues architecturales de type allocation
