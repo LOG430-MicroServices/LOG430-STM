@@ -53,7 +53,8 @@
     - [ADD-Localiser](#add-localiser)
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
-    - ![**RDCU-CU01** - Veux comparer les temps de trajet.](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
+    - [**RDCU-CU01** - Veux comparer les temps de trajet.]
+    ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
     - [**RDCU-CU04** -](#rdcu-cu04--)
