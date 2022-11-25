@@ -54,20 +54,15 @@
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
     - [**RDCU-CU01** - Veux comparer les temps de trajet.](#rdcu-cu1--)
-    ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
+   
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
     - [**RDCU-CU04** -](#rdcu-cu04--)
     - [**RDCU-CU05** -Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route](#rdcu-cu05--)
-     ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe4/Sercice_discovery_rdcu/Sercice_discovery_rdcu.png)
     - [**RDCU-CU06** -Veux informer le mainteneur sur le status de vie des microservices](#rdcu-cu06--)
-     ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_CU6/RDCU_CU6.png)
     - [**RDCU-CU07** -Veux pouvoir informer le mainteneur sur l’état interne d’un service (exemple l’état du CPU)](#rdcu-cu07--)
-     ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_Service_Monitoring/RDCU_Service_Monitoring.png)
     - [**RDCU-CU08** -Veux avoir le temps d’un trajet en autobus](#rdcu-cu08--)
-     ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU8/RDCU_CU8.png)()
     - [**RDCU-CU09** -Veux avoir le temps de trajet en auto](#rdcu-cu09--)
-     ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU9/RDCU_CU9.png)
     - [**RDCU-CU10** -](#rdcu-cu10--)
 - [Réalisation des attributs de qualité](#réalisation-des-attributs-de-qualité)
   - [RDAQ-Disponibilité](#rdaq-disponibilité)
@@ -952,7 +947,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 
 # Réalisation des cas d'utilisation
 ### [**RDCU-CU01**](#cu01---veux-comparer-les-temps-de-trajet) - Veux comparer les temps de trajet.
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
 ### [**RDCU-CU02**](#cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode) - Veux pouvoir mettre le chaos dans les services en mode.
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 ### [**RDCU-CU03**](#cu03)  
@@ -960,15 +955,15 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ### [**RDCU-CU04**](#cu04---veux-pouvoir-s'authentifier) - Veux pouvoir s'authentifier
 ![DiagrammeSéquenceAuthentification](https://github.com/LOG430-MicroServices/LOG430-STM/blob/6e9ba49ebaee64a86782a90e38347d89530386c0/out/doc/plantuml/auth/DiagrammeS%C3%A9quence_CU04/DiagrammeS%C3%A9quence_CU04.png)
 ### **RDCU-CU05** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe4/Sercice_discovery_rdcu/Sercice_discovery_rdcu.png)
 ### **RDCU-CU06** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_CU6/RDCU_CU6.png)
 ### **RDCU-CU07** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_Service_Monitoring/RDCU_Service_Monitoring.png)
 ### **RDCU-CU08** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU8/RDCU_CU8.png)
 ### **RDCU-CU09** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU9/RDCU_CU9.png)
 ### **RDCU-CU10** - 
 <span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 
