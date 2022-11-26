@@ -1,0 +1,46 @@
+@startuml Vue Modules
+Title "Vue Modules"
+
+hide empty members
+
+package Chaosmonkey {
+  Class server
+  Class routes
+  Class ServiceController{
+    -taskService: TaskService
+    +ServiceController(taskService: TaskService)
+  }
+  Class TasksController
+  Class Service{
+    name: string
+    url: string
+  }
+  Interface IChaosService
+  Class ChaosService
+  Interface IServiceRegistry
+  Class ServiceRegistry
+  Class MockServiceRegistry
+  Interface IServiceProxy
+  Class ServiceProxy
+  Class TaskService
+  Class Task{
+    id: number
+    numSteps: number
+    currentStep: number
+  }
+
+  server --> routes
+  routes --> ServiceController
+  routes --> TasksController
+  ServiceController --> TaskService
+  TasksController --> TaskService
+  ServiceController --> IServiceProxy
+  IServiceProxy <|-- ServiceProxy
+  ServiceProxy --> IServiceRegistry
+  IServiceRegistry <|-- ServiceRegistry
+  IServiceRegistry <|-- MockServiceRegistry
+  ServiceProxy --> IChaosService
+  IChaosService <|-- ChaosService
+}
+
+@enduml
