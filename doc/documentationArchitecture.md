@@ -602,16 +602,16 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
   |Identifiant|Description|
   |-----------|------------|
-  |[CU01-D1](#cu01-d1-disponibilité)| |
+  |[CU01-D1](#cu01-d1-disponibilité)| N/A|
   |[CU02-D1](#cu02-d1-disponibilité)| Ce CU est concerné par la sous-catégorie "Prévention des fautes" |
-  |[CU03-D1](#cu03-d1-disponibilité) |
+  |[CU03-D1](#cu03-d1-disponibilité) |N/A
   |[CU04-D1](#cu04-d1-disponibilité)| Ce CU est concerné par les sous-catégories "Détection de faute", "Préparation et réparation", et "Réintroduction" |
-  |[CU05-D1](#cu05-d1-disponibilité) |
-  |[CU06-D1](#cu06-d1-disponibilité) |
-  |[CU07-D1](#cu07-d1-disponibilité) |
-  |[CU08-D1](#cu08-d1-disponibilité) |
-  |[CU09-D1](#cu09-d1-disponibilité) |
-  |[CU10-D1](#cu10-d1-disponibilité) |
+  |[CU05-D1](#cu05-d1-disponibilité) |N/A
+  |[CU06-D1](#cu06-d1-disponibilité) |N/A
+  |[CU07-D1](#cu07-d1-disponibilité) |N/A
+  |[CU08-D1](#cu08-d1-disponibilité) |N/A
+  |[CU09-D1](#cu09-d1-disponibilité) |N/A
+  |[CU10-D1](#cu10-d1-disponibilité) |N/A
 
 ### ADD-[détection de faute](#rdtq-détection-de-faute)
 <div class="concept disponibilite">
@@ -857,7 +857,16 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## ADD-[Usabilité](#rdaq-usabilité)
   |Identifiant|Description|
   |-----------|------------|
-  |[CU02-U1](#cu02-u1-usabilité) |Attribut de l'utilisabilité permettant une utilisation facile du microservice de Chaosmonkey|
+  |[CU01-U1](#cu01-u1-usabilité) | N/A
+  |[CU02-U1](#cu02-u1-usabilité) |Ce CU est concerné|
+  |[CU03-U1](#cu03-u1-usabilité) | N/A
+  |[CU04-U1](#cu04-u1-usabilité) | N/A
+  |[CU05-U1](#cu05-u1-usabilité) | N/A
+  |[CU06-U1](#cu06-u1-usabilité) | N/A
+  |[CU07-U1](#cu07-u1-usabilité) | N/A
+  |[CU08-U1](#cu08-u1-usabilité) | N/A
+  |[CU09-U1](#cu09-u1-usabilité) | N/A
+  |[CU10-U1](#cu10-u1-usabilité) | N/A
 
 ### ADD-[Supporter l'initiative de l'usager](#rdtq-supporter-linitiative-de-lusager)
 <div class="concept usabilite">
@@ -885,37 +894,34 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## ADD-[Interopérabilité](#rdaq-interopérabilité)
   |Identifiant|Description|
   |-----------|------------|
-  |[CU01-I1](#cu01-i1-interopérabilité)| | 
-  |[CU02-I1](#cu01-i1-interopérabilité)| |
-  |[CU03-I1](#cu01-i1-interopérabilité)| |
-  |[CU04-I1](#cu01-i1-interopérabilité)| |
-  |[CU05-I1](#cu01-i1-interopérabilité)| |
-  |[CU06-I1](#cu01-i1-interopérabilité)| |
-  |[CU07-I1](#cu01-i1-interopérabilité)| |
-  |[CU08-I1](#cu01-i1-interopérabilité)| |
-  |[CU09-I1](#cu01-i1-interopérabilité)| |
-  |[CU10-I1](#cu01-i1-interopérabilité)| |
+  |[CU01-I1](#cu01-i1-interopérabilité)|N/A | 
+  |[CU02-I1](#cu02-i1-interopérabilité)|Ce CU est concerné pour toutes les sous-catégories|
+  |[CU03-I1](#cu03-i1-interopérabilité)|N/A |
+  |[CU04-I1](#cu04-i1-interopérabilité)|Ce CU est concerné pour la sous-catégorie "Localiser" |
+  |[CU05-I1](#cu05-i1-interopérabilité)|N/A |
+  |[CU06-I1](#cu06-i1-interopérabilité)|N/A |
+  |[CU07-I1](#cu07-i1-interopérabilité)|N/A |
+  |[CU08-I1](#cu08-i1-interopérabilité)|N/A |
+  |[CU09-I1](#cu09-i1-interopérabilité)|N/A |
+  |[CU10-I1](#cu0-0i1-interopérabilité)|N/A |
 ### ADD-[Localiser](#rdtq-localiser)
 <div class="concept interoperabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Discover Service</li>|<li>Permet de gérer dynamiquement quels services sont disponibles</li>| <li>Augmente le nombre d'appels qui doivent être faits afin de communiquer avec d'autres microservices</li>|H|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi la tactique "Discover Service" car elle nous permet, dans tous nos microservices, de connaître les autres microservices existants. En effet, surtout dans le cas du microservice de Chaos, il est impératif d'obtenir facilement une liste à jour de tous les microservices déployés.</span>
 
 ### ADD-[Gérer les interfaces](#rdtq-gérer-les-ressources)
 <div class="concept interoperabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Orchestrate</li>|<li>Permet de faire collaborer plusieurs services indépendants afin d'effectuer une action plus complexe</li>|<li>Les actions effectuées par nos microservices ne sont pas assez complexes pour nécessiter l'utilisation de plusieurs petits services indépendants. Cela augmenterait beaucoup la complexité et la latence.</li>|L|H|
+| <li>Tailor interface</li>|<li>Permet de configurer certaines interfaces afin d'offrir plus ou moins de fonctionnalités selon certains paramètres, ici le type d'utilisateur (normal ou "poweruser")</li>| <li>Augmente la complexité de l'application et la configuration requise pour faire certains appels</li>|M|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi la tactique "Tailor interface" car celle-ci nous permet d'offrir des fonctionnalités plus puissantes à certains utilisateurs, ce qui est utile puisque la nature du microservice de Chaos se prête bien à la présence de différents types d'utilisateur. Dans notre cas, nous avons décidé d'offrir une fonctionnalité de "Batching", ou de faire plusieurs appels en un, aux utilisateurs de type "poweruser".</span>
 
 # Réalisation des cas d'utilisation
 ### [**RDCU-CU01**](#cu01---veux-comparer-les-temps-de-trajet) - Veux comparer les temps de trajet.
