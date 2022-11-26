@@ -630,9 +630,9 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
   |Identifiant|Description|
   |-----------|------------|
   |[CU01-D1](#cu01-d1-disponibilité)| |
-  |[CU02-D1](#cu02-d1-disponibilité)| |
+  |[CU02-D1](#cu02-d1-disponibilité)| Ce CU est concerné par la sous-catégorie "Prévention des fautes" |
   |[CU03-D1](#cu03-d1-disponibilité) |
-  |[CU04-D1](#cu04-d1-disponibilité) |
+  |[CU04-D1](#cu04-d1-disponibilité)| Ce CU est concerné par les sous-catégories "Détection de faute", "Préparation et réparation", et "Réintroduction" |
   |[CU05-D1](#cu05-d1-disponibilité) |
   |[CU06-D1](#cu06-d1-disponibilité) |
   |[CU07-D1](#cu07-d1-disponibilité) |
@@ -645,22 +645,21 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Ping/Echo</li>|<li>Relativement simple à implémenter</li>| <li>Nécessite que la copie secondaire connaisse l'adresse de la copie principale</li>|M|M|
+| <li>Heartbeat</li>|<li>Relativement simple à implémenter</li>| <li>Nécessite que la copie principale connaisse l'adresse de la copie secondaire</li>|M|L|
+| <li>Self-test</li>|<li>Réduit le nombre de communications inter-processus</li>| <li>Une autre tactique serait nécessaire pour notifier la copie secondaire que la copie principale n'est plus fonctionnelle</<li>|M|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>En combinaison avec les autres tactiques de disponibilité que nous avons décidé d'utiliser, nous avons déterminé que la tactique "Heartbeat" était le plus logique à utiliser. En effet, dans le cadre de la gestion de la copie principale/secondaire, la copie principale sait automatiquement comment communiquer avec la copie secondaire. Un envoi de messages dans cette direction était donc naturel. Si nous avions décidé d'utiliser la tactique "Ping/echo", nous aurions dû également ajouter une configuration initiale permettant à la copie secondaire de communiquer avec la copie principale. Cela aurait augmenté la complexité de la logique de disponibilité. Pour la même raison, utiliser un Self-test aurait été plus compliqué, car il aurait été difficile de notifier la copie secondaire d'un problème au niveau de la copie principale (perte de réseau, crash complet, etc.).</span>
 
 ### ADD-[Préparation et réparation](#rdtq-préparation-et-réparation)
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
-</div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+| <li>Redondance active</li>|<li>Permet de remplacer la copie principale par une copie secondaire</li>| <li>Nécessite que la copie secondaire reçoive tous les messages envoyés à la copie principale</li><li>Ajoute de la complexité à l'application</li>|M|H|
+| <li>Redondance passive</li>|<li>Permet de remplacer la copie principale par une copie secondaire</li><li>Dans notre contexte, la copie secondaire n'a pas à se synchroniser avec la copie principale</li>| <li>Ajoute de la complexité à l'application</li><li>Nécessite de persister à la base de données toutes les opérations</li>|M|M|
+
+<span>Nous avons décidé d'utiliser la tactique de redondance passive, car nous trouvions cette solution plus simple en raison du contexte particulier de notre application. En effet, puisque nous persistons tous les changements à la base de données, aucune synchronisation n'est nécessaire; la copie secondaire est toujours à jour car ses opérations nécessitent de communiquer avec la base de données, qui est à jour. Ainsi, une copie active n'apporterait pas de valeur ajoutée, mais ajouterait encore plus de complexité.</span>
 
 ### ADD-[Réintroduction](#rdtq-réintroduction)
 <div class="concept disponibilite">
