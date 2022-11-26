@@ -950,40 +950,36 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Disponibilité](#add-disponibilité) 
 
   ###  [RDTQ-Détection de faute](#add-détection-de-faute)
-  <span style="color:red">nom de la tactique</span>
+  <span>Heartbeat</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-DetectFaults/Disponibility-DetectFaults.png)
 
   ### [RDTQ-Préparation et réparation](#add-préparation-et-réparation)
   
-  <span style="color:red">nom de la tactique</span>
+<span>Redondance passive</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-Repair/Disponibility-Repair.png)
 
   ### [RDTQ-Réintroduction](#add-réintroduction)
 
-  <span style="color:red">nom de la tactique</span>
-   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>State Resynchronization</span>
+
+  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-Reintroduce/Disponibility-Reintroduce.png)
   
   ### [RDTQ-Prévention des fautes](#add-prévention-des-fautes) 
-  <span style="color:red">nom de la tactique</span>
+  <span>Increase Competence Set</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
 
   ### Relation entre les éléments architectuale et les exigences de disponibilité
  |Identifiant|Éléments|Description de la responabilité|
  |-----------|--------|-------------------------------|
- |[CU01-D1](#cu01-d1-disponibilité) | |
- |[CU02-D1](#cu02-d1-disponibilité) | |
- |[CU03-D1](#cu03-d1-disponibilité) | |
- |[CU04-D1](#cu04-d1-disponibilité) | |
- |[CU05-D1](#cu05-d1-disponibilité) | |
- |[CU06-D1](#cu06-d1-disponibilité) | |
- |[CU07-D1](#cu07-d1-disponibilité) | |
- |[CU08-D1](#cu08-d1-disponibilité) | |
- |[CU09-D1](#cu09-d1-disponibilité) | |
- |[CU10-D1](#cu10-d1-disponibilité) | |
+ |[CU02-D1](#cu02-d1-disponibilité) |Chaosmonkey |Doit être disponible même si le Service Registry est hors-ligne|
+ |[CU02-D2](#cu02-d2-disponibilité) |Service Registry |Doit donner la liste des services|
+ |[CU04-D1](#cu04-d1-disponibilité) |Copie principale|Doit démarrer la copie secondaire et lui envoyer des heartbeats|
+ |[CU04-D2](#cu04-d2-disponibilité) |Copie secondaire |Doit s'assurer que la copie principale fonctionne. Sinon, elle devient la copie principale et démarre une nouvelle copie secondaire | 
+ |[CU04-D2](#cu04-d2-disponibilité) |Nouvelle copie secondaire |Doit se synchroniser afin de pouvoir être disponible si la copie secondaire arrête de fonctionner |
+ |[CU04-D3](#cu04-d3-disponibilité) |Service Registry |Doit être notifié d'un changement de la copie principale |
   
 ## RDAQ-[Modifiabilité](#add-modifiabilité)
 
