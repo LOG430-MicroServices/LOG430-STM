@@ -602,60 +602,59 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
   |Identifiant|Description|
   |-----------|------------|
-  |[CU01-D1](#cu01-d1-disponibilité)| |
-  |[CU02-D1](#cu02-d1-disponibilité)| |
-  |[CU03-D1](#cu03-d1-disponibilité) |
-  |[CU04-D1](#cu04-d1-disponibilité) |
-  |[CU05-D1](#cu05-d1-disponibilité) |
-  |[CU06-D1](#cu06-d1-disponibilité) |
-  |[CU07-D1](#cu07-d1-disponibilité) |
-  |[CU08-D1](#cu08-d1-disponibilité) |
-  |[CU09-D1](#cu09-d1-disponibilité) |
-  |[CU10-D1](#cu10-d1-disponibilité) |
+  |[CU01-D1](#cu01-d1-disponibilité)| N/A|
+  |[CU02-D1](#cu02-d1-disponibilité)| Ce CU est concerné par la sous-catégorie "Prévention des fautes" |
+  |[CU03-D1](#cu03-d1-disponibilité) |N/A
+  |[CU04-D1](#cu04-d1-disponibilité)| Ce CU est concerné par les sous-catégories "Détection de faute", "Préparation et réparation", et "Réintroduction" |
+  |[CU05-D1](#cu05-d1-disponibilité) |N/A
+  |[CU06-D1](#cu06-d1-disponibilité) |N/A
+  |[CU07-D1](#cu07-d1-disponibilité) |N/A
+  |[CU08-D1](#cu08-d1-disponibilité) |N/A
+  |[CU09-D1](#cu09-d1-disponibilité) |N/A
+  |[CU10-D1](#cu10-d1-disponibilité) |N/A
 
 ### ADD-[détection de faute](#rdtq-détection-de-faute)
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Ping/Echo</li>|<li>Relativement simple à implémenter</li>| <li>Nécessite que la copie secondaire connaisse l'adresse de la copie principale</li>|M|M|
+| <li>Heartbeat</li>|<li>Relativement simple à implémenter</li>| <li>Nécessite que la copie principale connaisse l'adresse de la copie secondaire</li>|M|L|
+| <li>Self-test</li>|<li>Réduit le nombre de communications inter-processus</li>| <li>Une autre tactique serait nécessaire pour notifier la copie secondaire que la copie principale n'est plus fonctionnelle</<li>|M|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>En combinaison avec les autres tactiques de disponibilité que nous avons décidé d'utiliser, nous avons déterminé que la tactique "Heartbeat" était le plus logique à utiliser. En effet, dans le cadre de la gestion de la copie principale/secondaire, la copie principale sait automatiquement comment communiquer avec la copie secondaire. Un envoi de messages dans cette direction était donc naturel. Si nous avions décidé d'utiliser la tactique "Ping/echo", nous aurions dû également ajouter une configuration initiale permettant à la copie secondaire de communiquer avec la copie principale. Cela aurait augmenté la complexité de la logique de disponibilité. Pour la même raison, utiliser un Self-test aurait été plus compliqué, car il aurait été difficile de notifier la copie secondaire d'un problème au niveau de la copie principale (perte de réseau, crash complet, etc.).</span>
 
 ### ADD-[Préparation et réparation](#rdtq-préparation-et-réparation)
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
-</div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+| <li>Redondance active</li>|<li>Permet de remplacer la copie principale par une copie secondaire</li>| <li>Nécessite que la copie secondaire reçoive tous les messages envoyés à la copie principale</li><li>Ajoute de la complexité à l'application</li>|M|H|
+| <li>Redondance passive</li>|<li>Permet de remplacer la copie principale par une copie secondaire</li><li>Dans notre contexte, la copie secondaire n'a pas à se synchroniser avec la copie principale</li>| <li>Ajoute de la complexité à l'application</li><li>Nécessite de persister à la base de données toutes les opérations</li>|M|M|
+
+<span>Nous avons décidé d'utiliser la tactique de redondance passive, car nous trouvions cette solution plus simple en raison du contexte particulier de notre application. En effet, puisque nous persistons tous les changements à la base de données, aucune synchronisation n'est nécessaire; la copie secondaire est toujours à jour car ses opérations nécessitent de communiquer avec la base de données, qui est à jour. Ainsi, une copie active n'apporterait pas de valeur ajoutée, mais ajouterait encore plus de complexité.</span>
 
 ### ADD-[Réintroduction](#rdtq-réintroduction)
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Shadow</li>|<li>Permet de valider le comportement de la copie avant de la rendre disponible au monde extérieur</li>| <li>Augmente la complexité</li><li>Augmente le temps avant que le composant soit disponible</li>|M|H|
+| <li>State Resynchronization</li>|<li>Permet de mettre à jour la copie afin qu'elle soit prête à recevoir des appels si elle doit devenir la copie principale </li>| <li>Ajoute la tâche de synchroniser la copie secondaire aux responsabilités de la copie principale</li>|M|M|
+| <li>Escalating restart</li>|<li>Permet de rajouter des fonctionnalités à la copie secondaire progressivement</li>|<li>La complexité de l'application ne justifie pas l'ajout progressif de fonctionnalités, puisqu'elle est relativement simple</li>|L|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi d'implémenter la tactique "State Resynchronization" puisque notre stratégie de copies principale/secondaire s'y prêtait bien. En effet, lorsque la copie secondaire devient la copie principale et démarre une nouvelle copie secondaire, celle-ci doit être synchronisée. Si on utilisait les tactiques "Shadow" ou "Escalating restart", cela augmenterait simplement le temps avant que la copie secondaire soit prête, sans augmenter la valeur associée.</span>
 
 ### ADD-[Prévention des fautes](#rdtq-prévention-des-fautes)  
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Transactions</li>|<li>Permet d'éviter des problèmes de corruption de la base de données</li>|<li>Les requêtes envoyées à la base de données sont trop simples pour profiter des transactions</li>|L|M|
+| <li>Exception Prevention</li>|<li>Permet de réduire le nombre d'exceptions, ou de cas d'erreurs, qui apparaissent lors de l'exécution de l'application</li>| <li>L'utilisation de Typescript et Javascript cachent déjà la majorité des exceptions normalement associées à cette tactique</li>|L|L|
+| <li>Increase Competence Set</li>|<li>Permet au logiciel de fonctionner même si d'autres microservices ont des erreurs</li>|<li>Se heurte au [théorème de Brewer](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_CAP); la cohérence est sacrifiée au profit de la disponbilité et de la tolérance au partionnement lors d'une erreur</li>|H|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi d'utiliser la tactique "Increase Competence Set". En effet, si le microservice nous donnant la liste des microservices meurt, ce qui est très probable puisque cette tactique est utilisée dans le cadre du microservice de Chaos, nous devons être en mesure de contrôler les autres microservices en attendant qu'il redémarre.</span>
 
 ## ADD-[Modifiabilité](#rdaq-modifiabilité)
   |Identifiant|Description|
@@ -858,7 +857,16 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## ADD-[Usabilité](#rdaq-usabilité)
   |Identifiant|Description|
   |-----------|------------|
-  |[CU02-U1](#cu02-u1-usabilité) |Attribut de l'utilisabilité permettant une utilisation facile du microservice de Chaosmonkey|
+  |[CU01-U1](#cu01-u1-usabilité) | N/A
+  |[CU02-U1](#cu02-u1-usabilité) |Ce CU est concerné|
+  |[CU03-U1](#cu03-u1-usabilité) | N/A
+  |[CU04-U1](#cu04-u1-usabilité) | N/A
+  |[CU05-U1](#cu05-u1-usabilité) | N/A
+  |[CU06-U1](#cu06-u1-usabilité) | N/A
+  |[CU07-U1](#cu07-u1-usabilité) | N/A
+  |[CU08-U1](#cu08-u1-usabilité) | N/A
+  |[CU09-U1](#cu09-u1-usabilité) | N/A
+  |[CU10-U1](#cu10-u1-usabilité) | N/A
 
 ### ADD-[Supporter l'initiative de l'usager](#rdtq-supporter-linitiative-de-lusager)
 <div class="concept usabilite">
@@ -886,37 +894,34 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## ADD-[Interopérabilité](#rdaq-interopérabilité)
   |Identifiant|Description|
   |-----------|------------|
-  |[CU01-I1](#cu01-i1-interopérabilité)| | 
-  |[CU02-I1](#cu01-i1-interopérabilité)| |
-  |[CU03-I1](#cu01-i1-interopérabilité)| |
-  |[CU04-I1](#cu01-i1-interopérabilité)| |
-  |[CU05-I1](#cu01-i1-interopérabilité)| |
-  |[CU06-I1](#cu01-i1-interopérabilité)| |
-  |[CU07-I1](#cu01-i1-interopérabilité)| |
-  |[CU08-I1](#cu01-i1-interopérabilité)| |
-  |[CU09-I1](#cu01-i1-interopérabilité)| |
-  |[CU10-I1](#cu01-i1-interopérabilité)| |
+  |[CU01-I1](#cu01-i1-interopérabilité)|N/A | 
+  |[CU02-I1](#cu02-i1-interopérabilité)|Ce CU est concerné pour toutes les sous-catégories|
+  |[CU03-I1](#cu03-i1-interopérabilité)|N/A |
+  |[CU04-I1](#cu04-i1-interopérabilité)|Ce CU est concerné pour la sous-catégorie "Localiser" |
+  |[CU05-I1](#cu05-i1-interopérabilité)|N/A |
+  |[CU06-I1](#cu06-i1-interopérabilité)|N/A |
+  |[CU07-I1](#cu07-i1-interopérabilité)|N/A |
+  |[CU08-I1](#cu08-i1-interopérabilité)|N/A |
+  |[CU09-I1](#cu09-i1-interopérabilité)|N/A |
+  |[CU10-I1](#cu0-0i1-interopérabilité)|N/A |
 ### ADD-[Localiser](#rdtq-localiser)
 <div class="concept interoperabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Discover Service</li>|<li>Permet de gérer dynamiquement quels services sont disponibles</li>| <li>Augmente le nombre d'appels qui doivent être faits afin de communiquer avec d'autres microservices</li>|H|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi la tactique "Discover Service" car elle nous permet, dans tous nos microservices, de connaître les autres microservices existants. En effet, surtout dans le cas du microservice de Chaos, il est impératif d'obtenir facilement une liste à jour de tous les microservices déployés.</span>
 
 ### ADD-[Gérer les interfaces](#rdtq-gérer-les-ressources)
 <div class="concept interoperabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Orchestrate</li>|<li>Permet de faire collaborer plusieurs services indépendants afin d'effectuer une action plus complexe</li>|<li>Les actions effectuées par nos microservices ne sont pas assez complexes pour nécessiter l'utilisation de plusieurs petits services indépendants. Cela augmenterait beaucoup la complexité et la latence.</li>|L|H|
+| <li>Tailor interface</li>|<li>Permet de configurer certaines interfaces afin d'offrir plus ou moins de fonctionnalités selon certains paramètres, ici le type d'utilisateur (normal ou "poweruser")</li>| <li>Augmente la complexité de l'application et la configuration requise pour faire certains appels</li>|M|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi la tactique "Tailor interface" car celle-ci nous permet d'offrir des fonctionnalités plus puissantes à certains utilisateurs, ce qui est utile puisque la nature du microservice de Chaos se prête bien à la présence de différents types d'utilisateur. Dans notre cas, nous avons décidé d'offrir une fonctionnalité de "Batching", ou de faire plusieurs appels en un, aux utilisateurs de type "poweruser".</span>
 
 # Réalisation des cas d'utilisation
 ### [**RDCU-CU01**](#cu01---veux-comparer-les-temps-de-trajet) - Veux comparer les temps de trajet.
@@ -945,40 +950,36 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Disponibilité](#add-disponibilité) 
 
   ###  [RDTQ-Détection de faute](#add-détection-de-faute)
-  <span style="color:red">nom de la tactique</span>
+  <span>Heartbeat</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-DetectFaults/Disponibility-DetectFaults.png)
 
   ### [RDTQ-Préparation et réparation](#add-préparation-et-réparation)
   
-  <span style="color:red">nom de la tactique</span>
+<span>Redondance passive</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Préparation et réparation](../out/doc/plantuml/auth/Disponibility-Repair/Disponibility-Repair.png)
 
   ### [RDTQ-Réintroduction](#add-réintroduction)
 
-  <span style="color:red">nom de la tactique</span>
-   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>State Resynchronization</span>
+
+  ![Diagramme - Réintroduction](../out/doc/plantuml/auth/Disponibility-Reintroduce/Disponibility-Reintroduce.png)
   
   ### [RDTQ-Prévention des fautes](#add-prévention-des-fautes) 
-  <span style="color:red">nom de la tactique</span>
+  <span>Increase Competence Set</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Prévention des fautes](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
 
   ### Relation entre les éléments architectuale et les exigences de disponibilité
  |Identifiant|Éléments|Description de la responabilité|
  |-----------|--------|-------------------------------|
- |[CU01-D1](#cu01-d1-disponibilité) | |
- |[CU02-D1](#cu02-d1-disponibilité) | |
- |[CU03-D1](#cu03-d1-disponibilité) | |
- |[CU04-D1](#cu04-d1-disponibilité) | |
- |[CU05-D1](#cu05-d1-disponibilité) | |
- |[CU06-D1](#cu06-d1-disponibilité) | |
- |[CU07-D1](#cu07-d1-disponibilité) | |
- |[CU08-D1](#cu08-d1-disponibilité) | |
- |[CU09-D1](#cu09-d1-disponibilité) | |
- |[CU10-D1](#cu10-d1-disponibilité) | |
+ |[CU02-D1](#cu02-d1-disponibilité) |Chaosmonkey |Doit être disponible même si le Service Registry est hors-ligne|
+ |[CU02-D2](#cu02-d2-disponibilité) |Service Registry |Doit donner la liste des services|
+ |[CU04-D1](#cu04-d1-disponibilité) |Copie principale|Doit démarrer la copie secondaire et lui envoyer des heartbeats|
+ |[CU04-D2](#cu04-d2-disponibilité) |Copie secondaire |Doit s'assurer que la copie principale fonctionne. Sinon, elle devient la copie principale et démarre une nouvelle copie secondaire | 
+ |[CU04-D2](#cu04-d2-disponibilité) |Nouvelle copie secondaire |Doit se synchroniser afin de pouvoir être disponible si la copie secondaire arrête de fonctionner |
+ |[CU04-D3](#cu04-d3-disponibilité) |Service Registry |Doit être notifié d'un changement de la copie principale |
   
 ## RDAQ-[Modifiabilité](#add-modifiabilité)
 
@@ -1083,57 +1084,41 @@ Tactique: Limiter la Complexité Structurelle
 ## RDAQ-[Usabilité](#add-usabilité)
 
   ### [RDTQ-Supporter l'initiative de l'usager](#add-supporter-linitiative-de-lusager)
-  <span style="color:red">nom de la tactique</span>
- 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Aggréger</span>
+
+  ![Diagramme - Supporter l'initiative de l'usager](../out/doc/plantuml/chaos/Usability-SupportUserInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20de%20l'usager.png)
   
   ### [RDTQ-Supporter l'initiative du système](#add-supporter-linitiative-du-système)
-  <span style="color:red">nom de la tactique</span>
+  <span>Maintain System Model</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Supporter l'initiative du système](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
 
   ### Relation entre les éléments architectuale et les exigences d'usabilité
 |Identifiant|Éléments|Description de la responabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-U1](#cu01-u1-usabilité) | |
-  |[CU01-U2](#cu01-u1-usabilité) | |
-  |[CU02-U1](#cu02-u1-usabilité) | |
-  |[CU03-U1](#cu03-u1-usabilité) | |
-  |[CU04-U1](#cu04-u1-usabilité) | |
-  |[CU05-U1](#cu05-u1-usabilité) | |
-  |[CU06-U1](#cu06-u1-usabilité) | |
-  |[CU07-U1](#cu07-u1-usabilité) | |
-  |[CU08-U1](#cu08-u1-usabilité) | |
-  |[CU09-U1](#cu09-u1-usabilité) | |
-  |[CU10-U1](#cu10-u1-usabilité) | |
+  |[CU02-U1](#cu02-u1-usabilité) |Chaosmonkey|Doit permettre à l'utilisateur d'aggréger ses requêtes et de voir l'état d'une requête
+  |[CU02-U2](#cu02-u2-usabilité) |Service registry|Doit fournir la liste des services
+  |[CU02-U3](#cu02-u3-usabilité) |Utilisateur|Est celui à qui on veut fournir une bonne expérience
   
  ## RDAQ-[Interopérabilité](#add-interopérabilité)
 
   ### [RDTQ-Localiser](#add-localiser)
-  <span style="color:red">nom de la tactique</span>
+  <span>Discover Service</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Localiser](../out/doc/plantuml/chaos/Interoperability-Locate/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20Localiser.png)
   
   ### [RDTQ-Gérer les interfaces](#add-gérer-les-interfaces)
-  <span style="color:red">nom de la tactique</span>
-  
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Tailor Interface</span>
+
+  ![Diagramme - Gérer les interfaces](../out/doc/plantuml/chaos/Interoperability-ManageInterfaces/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20G%C3%A9rer%20les%20interfaces.png)
   
   ### Relation entre les éléments architectuale et les exigences d'interopérabilité
 |Identifiant|Éléments|Description de la responabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-I1](#cu01-i1-interopérabilité) | |
-  |[CU01-I2](#cu01-i1-interopérabilité) | |
-  |[CU02-I1](#cu02-i1-interopérabilité) | |
-  |[CU03-I1](#cu03-i1-interopérabilité) | |
-  |[CU04-I1](#cu04-i1-interopérabilité) | |
-  |[CU05-I1](#cu05-i1-interopérabilité) | |
-  |[CU06-I1](#cu06-i1-interopérabilité) | |
-  |[CU07-I1](#cu07-i1-interopérabilité) | |
-  |[CU08-I1](#cu08-i1-interopérabilité) | |
-  |[CU09-I1](#cu09-i1-interopérabilité) | |
-  |[CU10-I1](#cu10-i1-interopérabilité) | |
-
+  |[CU02-I1](#cu02-i1-interopérabilité) |Utilisateur|N'est pas autorisé à aggréger ses requêtes
+  |[CU02-I2](#cu02-i2-interopérabilité) |Poweruser|Est autorisé à aggréger ses requêtes
+  |[CU02-I3](#cu02-i3-interopérabilité) |Chaosmonkey|Gère ses interfaces 
+  |[CU02-I4](#cu02-i4-interopérabilité) |Service Registry|Fournit la liste des services
 
 # Vues architecturales 
 ## Vues architecturales de type Module
