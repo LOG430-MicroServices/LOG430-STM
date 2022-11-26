@@ -570,34 +570,7 @@ N/A
 
 <span style="color:red">Utiliser le gabarit suivant: https://wiki.sei.cmu.edu/confluence/display/SAD/Template%3AArchitectureViewTemplate</span>
 ## Présentation primaire
-```plantuml
-@startuml
-'https://plantuml.com/component-diagram
-
-package "LOG430-STM - Microservices" {
-[Authentification] as a
-[Chaos Monkey] as c
-[Trajet] as t
-[Discovery] as d
-[Monitoring] as m
-
-}
-
-cloud "Services Externes" as se {
-}
-
-actor "Chargé de Laboratoire .. 1" as cl
-t --> se
-
-cl --> d
-d --> a
-d --> t
-d --> c
-d --> m
-m --> d : "ping/echo"
-
-@enduml
-```
+![Diagramme de contexte](./assets/context-diagram.png)
 ## Catalogue d'éléments
 | Élement               | Description                                                                                                                                                                                                                                                                                                                                                                                                                            | lien vers document d'interfaces                                        |
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
@@ -1088,81 +1061,10 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 
   ### [RDTQ-Contrôle et observe l'état du système](#add-controle-and-observe-létat-du-système)[](https://file%2B.vscode-resource.vscode-cdn.net/Users/yvanross/sources/log430/LOG430-STM/doc/documentationArchitecture.md#add-usabilit%C3%A9)
 Tactique : Utilisation de Sources de données abstraites
-```plantuml
-@startuml
-
-actor ": Utilisateur" as user
-participant ": AuthController" as auth
-participant ": ValidationService" as val
-database ": MongoDB" as db
-participant ": JWTService" as jwt
-
-note over user, jwt : Tactique : Abstract Data Sources
-
-activate auth
-activate jwt
-activate val
-activate db
-user -> auth : login(username, password)
-note left : Scénario de login d'un utilisateur\nChaque module est indépendant les uns des autres,\navec des interfaces bien définies.\nIls peuvent donc être mockés pour être testés indépendamment.\nNous pouvons clairement voir les différentes couches\nqui sont indépendants les uns des autres.
-
-auth -> val : usernameValidation(username)
-val --> auth : true
-auth -> val : passwordValidation(password)
-val --> auth : true
-auth -> db : login(username, password)
-db --> auth : true
-auth -> jwt : generateToken()
-jwt --> auth : token
-auth --> user : token
-
-@enduml
-
-```
+![Controler et observer l'état du systeme](./assets/Testability-ControlObserveSystemState-RDTQ_Testabilité___Controle_et_Observation_de_l_État_du_Systeme__Tactique___Utilisation_de_Sources_de_données_abstraites.png)
   ### [RDTQ-limiter la complexité](#add-limiter-la-complexité)
 Tactique: Limiter la Complexité Structurelle
-```plantuml
-@startuml
-
-note as n
-Chaque module a des résponsabilités bien définies,
-et sont très peu dépendants les uns des autres.
-Ils sont très cohésifs et très peu couplés entre eux.
-Il n'y a pas de polymorphisme ou d'abstraction,
-seulement des appels dynamiques.
-end note
-class AuthController {
-login(username: string, password: string): Token
-signup(username: string, password: string): Token
-authorization(token: Token): boolean
-}
-
-class JWT {
-generateToken(): Token
-authorizeToken(): boolean
-}
-
-class Validation {
-usernameValidation(username: string): boolean
-passwordValidation(password: string): boolean
-}
-
-class AuthDB {
-login(username: string, password: string): boolean
-signup(username: string, password: string): boolean
-}
-
-class Token {
-token: string
-}
-
-AuthController ..> JWT
-AuthController ..> Validation
-AuthController ..> AuthDB
-
-
-@enduml
-```
+![Diagramme de séquence](./assets/Testability-LimitComplexity-RDTQ_Testabilité___Limiter_la_Complexité_du_Systeme__Tactique__Limiter_la_Complexité_Structurelle.png)
   ### Relation entre les éléments architectuale et les exigences de testabilité
   |Identifiant| Éléments         | Description de la responabilité                               |
   |------------------|---------------------------------------------------------------|-------------------------------|
@@ -1305,6 +1207,12 @@ Créer un tag git avec la commande "git tag rapport1"
 
 
 # Documentation des interfaces
+
+| Élement               | Description                                                                                                                                                                                                                                                                                                                                                                                                                            | lien vers document d'interfaces                                        |
+|-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
+| Chaos Monkey          | Ce microservice a été créé pour perturber les autres microservices, en simulant une panne. Il est utilisé pour les tuer, forçant la bonne implémentation du redémarrage ainsi que de s'assurer de la disponibilité du service.                                                                                                                                                                                                        |                                                                        |
+| Authentification      | Ce service d'authentification et d'autorisation sert à verifier que l'utilisation du système par un utilisateur est sincère est justifié. L'utilisateur concerné doit alors s'authentifier dans le système avant de pouvoir effectuer une action, qui devra être autorisée par ce microservice. Les informations essentielles seront stockées dans une base de données afin d'assurer la persistence et la continuité du service. | [Document d'interface Authentification](interface-authentification.md) |
+
 Les catalogues d'élément devraient être des tableaux qui contiennent la description des éléments en plus d'un lien vers la documentation de l'interface de ceux-ci.
 Je vous suggère d'utiliser un document par interface pour vous faciliter la tâche. Il sera ainsi plus facile de distribuer la documentation d'une interface aux équipes en ayant besoin.
 La documentation des interfaces de vos éléments doit se faire en utilisant le [gabarit suivant](template-interface.md).
