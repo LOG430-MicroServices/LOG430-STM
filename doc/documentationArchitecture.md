@@ -639,22 +639,22 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Shadow</li>|<li>Permet de valider le comportement de la copie avant de la rendre disponible au monde extérieur</li>| <li>Augmente la complexité</li><li>Augmente le temps avant que le composant soit disponible</li>|M|H|
+| <li>State Resynchronization</li>|<li>Permet de mettre à jour la copie afin qu'elle soit prête à recevoir des appels si elle doit devenir la copie principale </li>| <li>Ajoute la tâche de synchroniser la copie secondaire aux responsabilités de la copie principale</li>|M|M|
+| <li>Escalating restart</li>|<li>Permet de rajouter des fonctionnalités à la copie secondaire progressivement</li>|<li>La complexité de l'application ne justifie pas l'ajout progressif de fonctionnalités, puisqu'elle est relativement simple</li>|L|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi d'implémenter la tactique "State Resynchronization" puisque notre stratégie de copies principale/secondaire s'y prêtait bien. En effet, lorsque la copie secondaire devient la copie principale et démarre une nouvelle copie secondaire, celle-ci doit être synchronisée. Si on utilisait les tactiques "Shadow" ou "Escalating restart", cela augmenterait simplement le temps avant que la copie secondaire soit prête, sans augmenter la valeur associée.</span>
 
 ### ADD-[Prévention des fautes](#rdtq-prévention-des-fautes)  
 <div class="concept disponibilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Transactions</li>|<li>Permet d'éviter des problèmes de corruption de la base de données</li>|<li>Les requêtes envoyées à la base de données sont trop simples pour profiter des transactions</li>|L|M|
+| <li>Exception Prevention</li>|<li>Permet de réduire le nombre d'exceptions, ou de cas d'erreurs, qui apparaissent lors de l'exécution de l'application</li>| <li>L'utilisation de Typescript et Javascript cachent déjà la majorité des exceptions normalement associées à cette tactique</li>|L|L|
+| <li>Increase Competence Set</li>|<li>Permet au logiciel de fonctionner même si d'autres microservices ont des erreurs</li>|<li>Se heurte au [théorème de Brewer](https://fr.wikipedia.org/wiki/Th%C3%A9or%C3%A8me_CAP); la cohérence est sacrifiée au profit de la disponbilité et de la tolérance au partionnement lors d'une erreur</li>|H|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi d'utiliser la tactique "Increase Competence Set". En effet, si le microservice nous donnant la liste des microservices meurt, ce qui est très probable puisque cette tactique est utilisée dans le cadre du microservice de Chaos, nous devons être en mesure de contrôler les autres microservices en attendant qu'il redémarre.</span>
 
 ## ADD-[Modifiabilité](#rdaq-modifiabilité)
   |Identifiant|Description|
