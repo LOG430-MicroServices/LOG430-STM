@@ -1084,29 +1084,21 @@ Tactique: Limiter la Complexité Structurelle
 ## RDAQ-[Usabilité](#add-usabilité)
 
   ### [RDTQ-Supporter l'initiative de l'usager](#add-supporter-linitiative-de-lusager)
-  <span style="color:red">nom de la tactique</span>
- 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Aggréger</span>
+
+  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Usability-SupportUserInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20de%20l'usager.png)
   
   ### [RDTQ-Supporter l'initiative du système](#add-supporter-linitiative-du-système)
-  <span style="color:red">nom de la tactique</span>
+  <span>Maintain System Model</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
 
   ### Relation entre les éléments architectuale et les exigences d'usabilité
 |Identifiant|Éléments|Description de la responabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-U1](#cu01-u1-usabilité) | |
-  |[CU01-U2](#cu01-u1-usabilité) | |
-  |[CU02-U1](#cu02-u1-usabilité) | |
-  |[CU03-U1](#cu03-u1-usabilité) | |
-  |[CU04-U1](#cu04-u1-usabilité) | |
-  |[CU05-U1](#cu05-u1-usabilité) | |
-  |[CU06-U1](#cu06-u1-usabilité) | |
-  |[CU07-U1](#cu07-u1-usabilité) | |
-  |[CU08-U1](#cu08-u1-usabilité) | |
-  |[CU09-U1](#cu09-u1-usabilité) | |
-  |[CU10-U1](#cu10-u1-usabilité) | |
+  |[CU02-U1](#cu02-u1-usabilité) |Chaosmonkey|Doit permettre à l'utilisateur d'aggréger ses requêtes et de voir l'état d'une requête
+  |[CU02-U2](#cu02-u2-usabilité) |Service registry|Doit fournir la liste des services
+  |[CU02-U3](#cu02-u3-usabilité) |Utilisateur|Est celui à qui on veut fournir une bonne expérience
   
  ## RDAQ-[Interopérabilité](#add-interopérabilité)
 
