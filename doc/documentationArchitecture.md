@@ -958,18 +958,18 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   
 <span>Redondance passive</span>
 
-  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-Repair/Disponibility-Repair.png)
+  ![Diagramme - Préparation et réparation](../out/doc/plantuml/auth/Disponibility-Repair/Disponibility-Repair.png)
 
   ### [RDTQ-Réintroduction](#add-réintroduction)
 
   <span>State Resynchronization</span>
 
-  ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-Reintroduce/Disponibility-Reintroduce.png)
+  ![Diagramme - Réintroduction](../out/doc/plantuml/auth/Disponibility-Reintroduce/Disponibility-Reintroduce.png)
   
   ### [RDTQ-Prévention des fautes](#add-prévention-des-fautes) 
   <span>Increase Competence Set</span>
 
-  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
+  ![Diagramme - Prévention des fautes](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
 
   ### Relation entre les éléments architectuale et les exigences de disponibilité
  |Identifiant|Éléments|Description de la responabilité|
@@ -1086,12 +1086,12 @@ Tactique: Limiter la Complexité Structurelle
   ### [RDTQ-Supporter l'initiative de l'usager](#add-supporter-linitiative-de-lusager)
   <span>Aggréger</span>
 
-  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Usability-SupportUserInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20de%20l'usager.png)
+  ![Diagramme - Supporter l'initiative de l'usager](../out/doc/plantuml/chaos/Usability-SupportUserInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20de%20l'usager.png)
   
   ### [RDTQ-Supporter l'initiative du système](#add-supporter-linitiative-du-système)
   <span>Maintain System Model</span>
 
-  ![Diagramme - Détection de faute](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
+  ![Diagramme - Supporter l'initiative du système](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
 
   ### Relation entre les éléments architectuale et les exigences d'usabilité
 |Identifiant|Éléments|Description de la responabilité|
@@ -1103,30 +1103,22 @@ Tactique: Limiter la Complexité Structurelle
  ## RDAQ-[Interopérabilité](#add-interopérabilité)
 
   ### [RDTQ-Localiser](#add-localiser)
-  <span style="color:red">nom de la tactique</span>
+  <span>Discover Service</span>
 
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  ![Diagramme - Localiser](../out/doc/plantuml/chaos/Interoperability-Locate/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20Localiser.png)
   
   ### [RDTQ-Gérer les interfaces](#add-gérer-les-interfaces)
-  <span style="color:red">nom de la tactique</span>
-  
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+  <span>Tailor Interface</span>
+
+  ![Diagramme - Gérer les interfaces](../out/doc/plantuml/chaos/Interoperability-ManageInterfaces/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20G%C3%A9rer%20les%20interfaces.png)
   
   ### Relation entre les éléments architectuale et les exigences d'interopérabilité
 |Identifiant|Éléments|Description de la responabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-I1](#cu01-i1-interopérabilité) | |
-  |[CU01-I2](#cu01-i1-interopérabilité) | |
-  |[CU02-I1](#cu02-i1-interopérabilité) | |
-  |[CU03-I1](#cu03-i1-interopérabilité) | |
-  |[CU04-I1](#cu04-i1-interopérabilité) | |
-  |[CU05-I1](#cu05-i1-interopérabilité) | |
-  |[CU06-I1](#cu06-i1-interopérabilité) | |
-  |[CU07-I1](#cu07-i1-interopérabilité) | |
-  |[CU08-I1](#cu08-i1-interopérabilité) | |
-  |[CU09-I1](#cu09-i1-interopérabilité) | |
-  |[CU10-I1](#cu10-i1-interopérabilité) | |
-
+  |[CU02-I1](#cu02-i1-interopérabilité) |Utilisateur|N'est pas autorisé à aggréger ses requêtes
+  |[CU02-I2](#cu02-i2-interopérabilité) |Poweruser|Est autorisé à aggréger ses requêtes
+  |[CU02-I3](#cu02-i3-interopérabilité) |Chaosmonkey|Gère ses interfaces 
+  |[CU02-I4](#cu02-i4-interopérabilité) |Service Registry|Fournit la liste des services
 
 # Vues architecturales 
 ## Vues architecturales de type Module
