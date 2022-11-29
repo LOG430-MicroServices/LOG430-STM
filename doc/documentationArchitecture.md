@@ -1124,14 +1124,24 @@ Tactique: Limiter la Complexité Structurelle
 ## Vues architecturales de type Module
 ### Vue #1
 >#### Présentation primaire
+![Présentation primaire - Vue modules](../out/doc/plantuml/Vues_Architecturales_Modules/Presentation_primaire/Vue%20Modules.png)
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
-|el1|responsabilité incluant les liens vers les diagrammes de séquence démontrant le fonctionnement de celui-ci|http://www.etsmtl.ca|
+|Authentification.AuthController|Contrôleur responsable de générer et des valider les jetons d'authentification|[Document d'interface Authentification](interface-authentification.md)|
+|Authentification.AvailibilityController|Contrôleur responsable de gérer les heartbeats entre les différentes copies|[Document d'interface Authentification](interface-authentification.md)|
+|Authentification.MonitorController|Contrôleur responsable d'obtenir l'état des microservices (incluant celui-ci) et de simuler les pannes en répondant au Chaosmonkey|[Document d'interface Authentification](interface-authentification.md)|
+|Chaosmonkey.ServiceController|Contrôleur responsable d'obtenir la liste des microservices et d'envoyer les requêtes aux autres microservices afin de simuler les pannes|[Document d'interface Chaosmonkey](interface-chaosmonkey.md)|
+|Chaosmonkey.TasksController|Contrôleur responsable d'obtenir l'état des tâches prenant beaucoup de temps|[Document d'interface Chaosmonkey](interface-chaosmonkey.md)|
 >#### Diagramme de contexte
+![Diagramme de contexte - Vue modules](../out/doc/plantuml/Vues_Architecturales_Modules/Contexte/Contexte.png)
 >#### Guide de variabilité
+Puisque ce diagramme ne présente que les modules présents au niveau de l'implémentation, ils n'ont pas nécessairement de présence au moment de l'exécution. À défaut de modifier les fichiers sources de l'application, il n'y a donc pas de variabilité qui s'applique ici.
 >#### Raisonnement
+Plusieurs contrôleurs on été développés dans chaque microservice afin de séparer les responsabilités pour les différentes routes de l'application.
+Des interfaces internes ont été définies au niveau du Chaosmonkey afin de pouvoir insérer des services "Mock" puisque les autres microservices n'étaient pas disponibles pendant la majorité du temps de développement de l'application.
 >#### Vues associées
+Tous les diagrammes représentés dans les RDTQ correspondent à des éléments présents dans cette vue.
 ### Vue #2...
 
 ## Vues architecturales de type composant et connecteur

@@ -1,0 +1,87 @@
+@startuml Vue Modules
+Title "Vue Modules"
+
+hide empty members
+
+package Chaosmonkey {
+  Class "server" as chaos_server
+  Class "routes" as chaos_routes
+  Class ServiceController{
+    -taskService: TaskService
+    +ServiceController(taskService: TaskService)
+  }
+  Class TasksController
+  Class Service{
+    name: string
+    url: string
+  }
+  Interface IChaosService
+  Class ChaosService
+  Interface IServiceRegistry
+  Class ServiceRegistry
+  Class MockServiceRegistry
+  Interface IServiceProxy
+  Class ServiceProxy
+  Class TaskService
+  Class Task{
+    id: number
+    numSteps: number
+    currentStep: number
+  }
+
+  chaos_server --> chaos_routes
+  chaos_routes --> ServiceController
+  chaos_routes --> TasksController
+  ServiceController --> TaskService
+  TasksController --> TaskService
+  ServiceController --> IServiceProxy
+  IServiceProxy <|-- ServiceProxy
+  ServiceProxy --> IServiceRegistry
+  IServiceRegistry <|-- ServiceRegistry
+  IServiceRegistry <|-- MockServiceRegistry
+  ServiceProxy --> IChaosService
+  IChaosService <|-- ChaosService
+}
+
+package Authentification{
+  Class "server" as auth_server
+  Class "routes" as auth_routes
+  Class Heartbeat
+  Class Spawner
+  Class AuthController
+  Class AvailibilityController
+  Class MonitorController
+  Class Auth
+  Class Cache
+  Class MongoDB
+  Class Response
+  Class User
+  Class JWT
+  Class Validation
+
+  Heartbeat --> Spawner
+  AuthController --> Auth
+  AuthController --> Validation
+  AuthController --> JWT
+  AuthController --> Response
+  AvailibilityController --> Spawner
+  AvailibilityController --> Heartbeat
+  Auth --> MongoDB
+  Auth --> User
+  Cache --> User
+  auth_routes --> AuthController
+  auth_routes --> MonitorController
+  auth_routes --> AvailibilityController
+  auth_server --> auth_routes
+  auth_server --> MonitorController
+  auth_server --> Spawner
+  auth_server --> Heartbeat
+  JWT --> Cache
+}
+
+legend
+Légende : UML
+endlegend
+
+
+@enduml
