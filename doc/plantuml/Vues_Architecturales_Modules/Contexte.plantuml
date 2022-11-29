@@ -1,0 +1,30 @@
+@startuml
+title Diagramme de contexte Modules
+
+actor Utilisateur as user
+
+package "Vue Modules" {
+  [Authentification] as auth
+  [Chaosmonkey] as chaos 
+}
+database [Database] as db
+
+cloud Services as services {
+  [Service registry] as sr
+  [Trajet] as trajet
+  [Monitoring] as monitor
+}
+
+user -down-> chaos
+user -right-> auth
+chaos -> auth
+auth -> db
+
+chaos -right-> services
+auth -down-> services
+
+legend
+Légende : UML
+endlegend
+
+@enduml
