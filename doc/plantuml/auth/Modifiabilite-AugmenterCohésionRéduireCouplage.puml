@@ -1,5 +1,5 @@
 @startuml
-title RDTQ Disponbilité : Augmenter la cohésion/Réduire le couplage
+title RDTQ Modifiabilité : Augmenter la cohésion/Réduire le couplage
 
 actor ": Utilisateur" as user
 participant ": Controller" as controller
