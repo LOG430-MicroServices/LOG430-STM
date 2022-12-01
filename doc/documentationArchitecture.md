@@ -1260,9 +1260,9 @@ AuthController ..> AuthDB
  |Authentification_MS_Originale|Microservice qui authentifie qu’un user a le droit d’accéder à un service donné|[Document d'interface Authentification](interface-authentification.md)
  |Authentification_MS_Copie|La copie du micro service originale pour assurer la disponibilité|[Document d'interface Authentification](interface-authentification.md)
  |Chaos|Micro service utiliser pour détruire une instance d’un autre microservice|CU2
- |IserviceDiscovery!Interface à travers laquelle le micro service externe qui intercommunication entre microservices à l’aide d’une source unique de découverte de route est visible|CU5
- |IserviceTrajet|Interface à travers laquelle le micro service externe qui compare les temps de trajet est visible|CU1
- |IserviceMonitoring| Interface à travers laquelle le micro service externe qui informe le mainteneur sur le status de vie des autres microservices est visible|CU6
+ |IserviceDiscovery|Interface à travers laquelle le micro service externe qui intercommunication entre microservices à l’aide d’une source unique de découverte de route est visible|
+ |IserviceTrajet|Interface à travers laquelle le micro service externe qui compare les temps de trajet est visible|
+ |IserviceMonitoring| Interface à travers laquelle le micro service externe qui informe le mainteneur sur le status de vie des autres microservices est visible|
 >#### Diagramme de contexte
 ![VueComposantConnecteurDiagrammeContexte](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Diagramme_de_contexte/Diagramme_de_contexte.png)
 
