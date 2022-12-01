@@ -1052,22 +1052,22 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   ###  [RDTQ-Réduire la taille des modules](#add-réduire-la-taille-des-modules)
   <span>Split module</span>
   
-   ![Diagramme - Réduire la taille des modules](../out\doc\plantuml\auth\Modifiabilite-ReduceModuleSize\Modifiabilite-ReduceModuleSize.png)
+   ![Diagramme - Réduire la taille des modules](../out/doc/plantuml/auth/Modifiabilite-ReduceModuleSize/Modifiabilite-ReduceModuleSize.png)
 
   ### [RDTQ-Augmenter la cohésion](#add-augmenter-la-cohésion)
   <span>Increase semantic coherance</span>
   
-   ![Diagramme - Augmenter la cohésion](../out\doc\plantuml\auth\Modifiabilite-AugmenteCohesion\Modifiabilite-AugmenteCohesion.png)
+   ![Diagramme - Augmenter la cohésion](../out/doc/plantuml/auth/Modifiabilite-AugmenteCohesion/Modifiabilite-AugmenteCohesion.png)
 
   ### [RDTQ-Réduire le couplage](#add-réduire-le-couplage)
   <span >Encapsulation</span>
   
-   ![Diagramme - Réduire le couplage](../out\doc\plantuml\auth\Modifiabilite-RéduireCouplage\Modifiabilite-RéduireCouplage.png)
+   ![Diagramme - Réduire le couplage](../out/doc/plantuml/auth/Modifiabilite-RéduireCouplage/Modifiabilite-RéduireCouplage.png)
 
   ### [RDTQ-Defer binding](#add-defer-binding)
   <span>Defer Binding</span>
   
-   ![Diagramme - Defer binding](../out\doc\plantuml\auth\Modifiabilite-DeferBinding\Modifiabilite-DeferBinding.png)
+   ![Diagramme - Defer binding](../out/doc/plantuml/auth/Modifiabilite-DeferBinding/Modifiabilite-DeferBinding.png)
 
   ### Relation entre les éléments architectuale et les exigences de disponibilité
 |Identifiant|Éléments|Description de la responabilité|
