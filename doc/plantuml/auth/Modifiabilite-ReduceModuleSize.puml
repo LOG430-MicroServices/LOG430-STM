@@ -1,0 +1,94 @@
+@startuml
+title RDTQ Modifiabilité : Réduire la taille des modules
+
+
+note as n
+Tactique : Split module
+
+Si le module en cours de modification inclut de
+nombreuses fonctionnalités,le coût de la modification
+sera probablement élevé. Affiner le module en
+plusieurs modules plus petits devrait réduire le coût
+moyen des modifications futures.
+
+end note
+
+class AuthController {
+login(username: string, password: string): Token
+signup(username: string, password: string): Token
+authorization(token: Token): boolean
+}
+
+class JWT {
+generateToken(): Token
+authorizeToken(): boolean
+}
+
+class Validation {
+usernameValidation(username: string): boolean
+passwordValidation(password: string): boolean
+}
+
+class AuthDB {
+login(username: string, password: string): boolean
+signup(username: string, password: string): boolean
+}
+
+class Token {
+token: string
+}
+
+AuthController ..> JWT
+AuthController ..> Validation
+AuthController ..>AuthDB
+
+
+@enduml
+
+
+skinparam linetype ortho
+skinparam nodesep 100
+skinparam ranksep 100
+left to right direction
+
+
+component :AuthController {
+portout login as al
+portout signup as as
+portout verify as av
+
+}
+
+component :JWT {
+portin generateToken
+portin verifyToken
+}
+
+component ":UsernameAndPasswordValidation" as val {
+
+}
+
+as --> generateToken
+al --> generateToken
+av --> verifyToken
+as --> val
+al --> val
+
+database "MongoDB" {
+    component :AuthDB {
+    portin login as da
+    portin signup as ds
+
+    component ":User" as us
+    }
+
+    da --> us
+    ds --> us
+}
+
+al --> da
+as --> ds
+
+
+
+@enduml

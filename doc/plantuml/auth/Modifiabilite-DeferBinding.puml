@@ -1,0 +1,24 @@
+@startuml
+title RDTQ Modifiabilité: Defer binding
+
+participant ": fichier .env" as env
+participant ": middleWare" as mw
+participant ": Controller" as controller
+participant ": Route #1" as r1
+
+
+note over env, mw: Tactique: Defer Binding (Ressource file)
+
+activate env
+activate mw
+activate controller
+activate r1
+
+note left : scénario d'un call api d'utilisateur, \n Example général d'une requete fait par l'utilisateur pour démontrer \n l'augmentation de la cohésion et la réduction de couplage.
+
+env -> mw: process.env
+mw -> controller: getEnv(env)
+controller-> r1: request(data)
+r1 --> controller: data
+
+@enduml

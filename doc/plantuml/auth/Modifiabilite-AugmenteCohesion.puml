@@ -1,0 +1,45 @@
+@startuml
+title RDTQ Modifiabilité: Augmenté la cohésion
+note as n
+    Tactique : Increase semantic coherence
+
+    si la responsabilité de A et B dans un module n'a
+    pas le même objectif, elles doivent être placées dans
+    des modules différents
+end note
+
+class route {
+
+}
+
+class middleware {
+}
+
+class authController {
+    {method} login()
+    {method} signup()
+    {method} authorization()
+}
+
+class availabilityController {
+    {method} heartbeat()
+}
+
+class monitorController {
+    {method} subscribe()
+    {method} getResources()
+    {method} downService()
+    {method} instableService()
+    {method} setLatency()
+    {method} simulateLatency()
+    {method} kill()
+}
+
+monitorController --> route
+availabilityController --> route
+authController --> route
+route --> middleware
+
+
+
+@enduml

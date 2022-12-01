@@ -1,4 +1,4 @@
-@startuml
+@startuml Authentification
 title Diagramme de séquence du CU04 - Authentification
 
 actor ": Utilisateur" as user
