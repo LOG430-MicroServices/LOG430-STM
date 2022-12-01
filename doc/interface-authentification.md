@@ -36,6 +36,59 @@ Autorise un utilisateur à l'aide de son token, donné dans le header "Authoriz
 - Le token n'est pas valide.
 - Trop de tentatives ont été essayées avec un token invalide.
 
+*string downservice(Service service)* \
+Indique au service qu'un autre microservice est down. Log cette information dans le journal de logs pour de futures investigations. \
+**Pré-conditions**
+- Le service de monitoring est fonctionnel.
+- Notre service est enregistré auprès du service de monitoring.
+  **Post-conditions**
+- Le service log l'information dans un journal.
+  **Erreurs**
+- N/A
+
+
+*string getResources()* \
+Appellé par le service de monitoring. Renvoie la quantité de Ram actuellement utilisée par le système . \
+**Pré-conditions**
+- Le service de monitoring est fonctionnel.
+- Notre service est enregistré auprès du service de monitoring.
+  **Post-conditions**
+- Le service renvoie la quantité de ram actuellement utilisée par le système.
+  **Erreurs**
+- N/A
+
+
+*string instableservice(Service service)* \
+Indique au service qu'un autre microservice est instable. Log cette information dans le journal de logs pour de futures investigations. \
+**Pré-conditions**
+- Le service de monitoring est fonctionnel.
+- Notre service est enregistré auprès du service de monitoring.
+  **Post-conditions**
+- Le service log l'information dans un journal.
+  **Erreurs**
+- N/A
+
+
+
+*string setLatency(string latency)* \
+Appellé par un autre microservice. Utilisé pour augmenter volontairement la latence du système pour vérifier son bon fonctionnement. Utilise la valeur donnée en paramètre pour ce faire.
+**Pré-conditions**
+- N/A
+  **Post-conditions**
+- Le service est maintenant plus lent ou plus rapide, selon la valeur donnée.
+  **Erreurs**
+- N/A
+
+*string kill()* \
+Appellé par le microservice Chaos Monkey. Tue le service, le forçant à redémarrer afin de bien vérifier son bon fonctionnement.
+**Pré-conditions**
+- Le service est fonctionnel, ainsi que le service Chaos Monkey.
+  **Post-conditions**
+- Le service est tué, devant alors redémarrer.
+  **Erreurs**
+- N/A
+
+
 
 #### Types de données et constantes
 **Type User** \
@@ -45,6 +98,13 @@ Ce type représente un utilisateur du système, enregistré en base de données
   **Type Token** \
   Ce type représente un token d'autorisation de type JWT.
 - String token
+
+**Type Service** \
+Ce type représente un microservice du système, qui est instable ou down. L'ensemble contient l'url du système affecté, son nom, ainsi que le message d'erreur.
+- String url
+- String name
+- String providedMessage
+
 #### La gestion des erreurs
 - 404 Utilisateur n'existe pas
 - 401 Token invalide
@@ -81,3 +141,18 @@ body : {"username": "John.Smith54@gmail.com", "password": "HelloWorld1234!"}
 
 GET https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/verify \
 Authorization-header: Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJFUzI1NiIsImtpZCI6IjNkMmI0NzNlMDYxN2I5OGY0MDAxNGZkYjFmMjVkNDYwIn0.e30.V_Y4tiO-fNchQjszRnIgHbjbvlILK_H2G33OsV4sBXHGnJKvBFOQsCWSjrHRuQQue4G1ByaGIreLdzsrqa1aog
+
+POST https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/downservice
+body : {"url": "https://portainer.log430-20223-04.logti.etsmtl.ca.nip.io/", "name": "Service météo",
+"providedMessage":"service is down !"}
+
+GET https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/getresources
+
+POST https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/instableservice
+body : {"url": "https://portainer.log430-20223-04.logti.etsmtl.ca.nip.io/", "name": "Service météo",
+"providedMessage":"service is instable !"}
+
+POST https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/setLatency
+body : 2855
+
+POST https://portainer.log430-20223-02.logti.etsmtl.ca.nip.io/kill
