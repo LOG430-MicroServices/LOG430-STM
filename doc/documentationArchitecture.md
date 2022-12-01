@@ -731,16 +731,16 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 ## ADD-[Modifiabilité](#rdaq-modifiabilité)
   |Identifiant|Description|
   |-----------|------------|
-  |[CU01-M1](#cu01-m1-modifiabilité) | |
-  |[CU02-M1](#cu02-m1-modifiabilité) | |
-  |[CU03-M1](#cu03-m1-modifiabilité) | |
+  |[CU01-M1](#cu01-m1-modifiabilité) | N/A|
+  |[CU02-M1](#cu02-m1-modifiabilité) | N/A|
+  |[CU03-M1](#cu03-m1-modifiabilité) | N/A|
   |[CU04-M1](#cu04-m1-modifiabilité) | Ce service est concerné|
-  |[CU05-M1](#cu05-m1-modifiabilité) | |
-  |[CU06-M1](#cu06-m1-modifiabilité) | |
-  |[CU07-M1](#cu07-m1-modifiabilité) | |
-  |[CU08-M1](#cu08-m1-modifiabilité) | |
-  |[CU09-M1](#cu09-m1-modifiabilité) | |
-  |[CU10-M1](#cu10-m1-modifiabilité) | |
+  |[CU05-M1](#cu05-m1-modifiabilité) | N/A|
+  |[CU06-M1](#cu06-m1-modifiabilité) | N/A|
+  |[CU07-M1](#cu07-m1-modifiabilité) | N/A|
+  |[CU08-M1](#cu08-m1-modifiabilité) | N/A|
+  |[CU09-M1](#cu09-m1-modifiabilité) | N/A|
+  |[CU10-M1](#cu10-m1-modifiabilité) | N/A|
 
 ### ADD-[Réduire la taille des modules](#rdtq-réduire-la-taille-des-modules)
 <div class="concept modifiabilite">
@@ -924,7 +924,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   |Identifiant|Description|
   |-----------|------------|
   |[CU01-U1](#cu01-u1-usabilité) | N/A
-  |[CU02-U1](#cu02-u1-usabilité) |Ce CU est concerné|
+  |[CU02-U1](#cu02-u1-usabilité) |Ce service est concerné|
   |[CU03-U1](#cu03-u1-usabilité) | N/A
   |[CU04-U1](#cu04-u1-usabilité) | N/A
   |[CU05-U1](#cu05-u1-usabilité) | N/A
@@ -961,9 +961,9 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   |Identifiant|Description|
   |-----------|------------|
   |[CU01-I1](#cu01-i1-interopérabilité)|N/A | 
-  |[CU02-I1](#cu02-i1-interopérabilité)|Ce CU est concerné pour toutes les sous-catégories|
+  |[CU02-I1](#cu02-i1-interopérabilité)|Ce service est concerné pour toutes les sous-catégories|
   |[CU03-I1](#cu03-i1-interopérabilité)|N/A |
-  |[CU04-I1](#cu04-i1-interopérabilité)|Ce CU est concerné pour la sous-catégorie "Localiser" |
+  |[CU04-I1](#cu04-i1-interopérabilité)|Ce service est concerné pour la sous-catégorie "Localiser" |
   |[CU05-I1](#cu05-i1-interopérabilité)|N/A |
   |[CU06-I1](#cu06-i1-interopérabilité)|N/A |
   |[CU07-I1](#cu07-i1-interopérabilité)|N/A |
@@ -1037,8 +1037,8 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 
   ![Diagramme - Prévention des fautes](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
 
-  ### Relation entre les éléments architectuale et les exigences de disponibilité
- |Identifiant|Éléments|Description de la responabilité|
+  ### Relation entre les éléments architecturaux et les exigences de disponibilité
+ |Identifiant|Éléments|Description de la responsabilité|
  |-----------|--------|-------------------------------|
  |[CU02-D1](#cu02-d1-disponibilité) |Chaosmonkey |Doit être disponible même si le Service Registry est hors-ligne|
  |[CU02-D2](#cu02-d2-disponibilité) |Service Registry |Doit donner la liste des services|
@@ -1069,19 +1069,19 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   
    ![Diagramme - Defer binding](../out/doc/plantuml/auth/Modifiabilite-DeferBinding/Modifiabilite-DeferBinding.png)
 
-  ### Relation entre les éléments architectuale et les exigences de disponibilité
-|Identifiant|Éléments|Description de la responabilité|
+  ### Relation entre les éléments architecturaux et les exigences de disponibilité
+|Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
- |[CU01-M1](#cu01-m1-modifiabilité) | | 
+ |[CU01-M1](#cu01-m1-modifiabilité) | N/A| 
  |[CU02-M1](#cu02-m1-modifiabilité) | |  
- |[CU03-M1](#cu03-m1-modifiabilité) | |  
+ |[CU03-M1](#cu03-m1-modifiabilité) | N/A|  
  |[CU04-M1](#cu04-m1-modifiabilité) | |  
- |[CU05-M1](#cu05-m1-modifiabilité) | |  
- |[CU06-M1](#cu06-m1-modifiabilité) | |  
- |[CU07-M1](#cu07-m1-modifiabilité) | |  
- |[CU08-M1](#cu08-m1-modifiabilité) | |  
- |[CU09-M1](#cu09-m1-modifiabilité) | |  
- |[CU10-M1](#cu10-m1-modifiabilité) | |  
+ |[CU05-M1](#cu05-m1-modifiabilité) | N/A|  
+ |[CU06-M1](#cu06-m1-modifiabilité) | N/A|  
+ |[CU07-M1](#cu07-m1-modifiabilité) | N/A|  
+ |[CU08-M1](#cu08-m1-modifiabilité) | N/A|  
+ |[CU09-M1](#cu09-m1-modifiabilité) | N/A|  
+ |[CU10-M1](#cu10-m1-modifiabilité) | N/A|  
   
 ## RDAQ-[Performance](#add-performance)          
 
@@ -1092,6 +1092,20 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   ### [RDTQ-Gérer les ressources](#add-gérer-les-ressources)
   
   ![GérerLesRessources](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Performance-G%C3%A9rerLesRessources/Performance-G%C3%A9rerLesRessources.png)
+	
+### Relation entre les éléments architecturaux et les exigences de performance
+|Identifiant|Éléments|Description de la responsabilité|
+|-----------|--------|-------------------------------|
+  |[CU01-P1](#cu01-p1-performance) | |
+  |[CU02-P1](#cu02-p1-performance) | |
+  |[CU03-P1](#cu03-p1-performance) | |
+  |[CU04-P1](#cu04-p1-performance) | |
+  |[CU05-P1](#cu05-p1-performance) | |
+  |[CU06-P1](#cu06-p1-performance) | |
+  |[CU07-P1](#cu07-p1-performance) | |
+  |[CU08-P1](#cu08-p1-performance) | |
+  |[CU09-P1](#cu09-p1-performance) | |
+  |[CU10-P1](#cu10-p1-performance) | |
 
 ## RDAQ-[Sécurité](#add-sécurité)
 
@@ -1111,19 +1125,19 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   
   ![RécupérerDesAttaques](https://github.com/LOG430-MicroServices/LOG430-STM/blob/684a0ccf9cbef2c0dfc56c1feb9fc7fe27e84909/out/doc/plantuml/auth/Security-R%C3%A9cup%C3%A9rerDesAttaques/RDTQ%20S%C3%A9curit%C3%A9%20%20%20R%C3%A9cup%C3%A9rer%20des%20attaques.png)
 
-  ### Relation entre les éléments architectuale et les exigences de sécurité
-|Identifiant|Éléments|Description de la responabilité|
+  ### Relation entre les éléments architecturaux et les exigences de sécurité
+|Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-P1](#cu01-p1-performance) | |
-  |[CU02-P1](#cu02-p1-performance) | |
-  |[CU03-P1](#cu03-p1-performance) | |
-  |[CU04-P1](#cu04-p1-performance) | |
-  |[CU05-P1](#cu05-p1-performance) | |
-  |[CU06-P1](#cu06-p1-performance) | |
-  |[CU07-P1](#cu07-p1-performance) | |
-  |[CU08-P1](#cu08-p1-performance) | |
-  |[CU09-P1](#cu09-p1-performance) | |
-  |[CU10-P1](#cu10-p1-performance) | |
+  |[CU01-P1](#cu01-s1-sécurité) | |
+  |[CU02-P1](#cu02-s1-sécurité) | |
+  |[CU03-P1](#cu03-s1-sécurité) | |
+  |[CU04-P1](#cu04-s1-sécurité) | |
+  |[CU05-P1](#cu05-s1-sécurité) | |
+  |[CU06-P1](#cu06-s1-sécurité) | |
+  |[CU07-P1](#cu07-s1-sécurité) | |
+  |[CU08-P1](#cu08-s1-sécurité) | |
+  |[CU09-P1](#cu09-s1-sécurité) | |
+  |[CU10-P1](#cu10-s1-sécurité) | |
   
 ## RDAQ-[Testabilité](#add-testabilité)
 
@@ -1133,8 +1147,8 @@ Tactique : Utilisation de Sources de données abstraites
   ### [RDTQ-limiter la complexité](#add-limiter-la-complexité)
 Tactique: Limiter la Complexité Structurelle
 ![Diagramme de séquence](./assets/Testability-LimitComplexity-RDTQ_Testabilité___Limiter_la_Complexité_du_Systeme__Tactique__Limiter_la_Complexité_Structurelle.png)
-  ### Relation entre les éléments architectuale et les exigences de testabilité
-  |Identifiant| Éléments         | Description de la responabilité                               |
+  ### Relation entre les éléments architecturaux et les exigences de testabilité
+  |Identifiant| Éléments         | Description de la responsabilité                               |
   |------------------|---------------------------------------------------------------|-------------------------------|
   |[CU01-T1](#cu01-t1-testabilité) | N/A              | N/A                                                           |
   |[CU02-T1](#cu02-t1-testabilité) | N/A              | N/A                                                           |
@@ -1159,8 +1173,8 @@ Tactique: Limiter la Complexité Structurelle
 
   ![Diagramme - Supporter l'initiative du système](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
 
-  ### Relation entre les éléments architectuale et les exigences d'usabilité
-|Identifiant|Éléments|Description de la responabilité|
+  ### Relation entre les éléments architecturaux et les exigences d'usabilité
+|Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
   |[CU02-U1](#cu02-u1-usabilité) |Chaosmonkey|Doit permettre à l'utilisateur d'aggréger ses requêtes et de voir l'état d'une requête
   |[CU02-U2](#cu02-u2-usabilité) |Service registry|Doit fournir la liste des services
@@ -1178,8 +1192,8 @@ Tactique: Limiter la Complexité Structurelle
 
   ![Diagramme - Gérer les interfaces](../out/doc/plantuml/chaos/Interoperability-ManageInterfaces/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20G%C3%A9rer%20les%20interfaces.png)
   
-  ### Relation entre les éléments architectuale et les exigences d'interopérabilité
-|Identifiant|Éléments|Description de la responabilité|
+  ### Relation entre les éléments architecturaux et les exigences d'interopérabilité
+|Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
   |[CU02-I1](#cu02-i1-interopérabilité) |Utilisateur|N'est pas autorisé à aggréger ses requêtes
   |[CU02-I2](#cu02-i2-interopérabilité) |Poweruser|Est autorisé à aggréger ses requêtes
