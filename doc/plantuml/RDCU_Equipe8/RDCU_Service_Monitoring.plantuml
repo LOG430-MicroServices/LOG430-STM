@@ -8,7 +8,7 @@ participant "Ipublic:Monitoring" as Ipublic
 note left of Ipublic:**CU07** - Veux pouvoir informer le mainteneur sur l’état interne d’un service
 ctrl -> Ipublic: message:get(https://localhost/v1/components/schemas/Subscribe) 
 Ipublic -> ctrl: message: "The service was subscribed"
-ctrl -> Ipublic: resource:get(https://localhost/v1/components/schemas/getresources) 
-Ipublic -> ctrl: resource: "json"
+Ipublic -> ctrl: resource:get(https://localhost/v1/components/schemas/getresources) 
+ctrl ->Ipublic : resource: "json"
 
 @enduml
