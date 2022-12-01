@@ -1003,7 +1003,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ### **RDCU-CU06** - 
 ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_CU6/RDCU_CU6.png)
 ### **RDCU-CU07** - 
-![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe8/RDCU_Service_Monitoring/RDCU_Service_Monitoring.png)
+![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/41f6aa48c32acf711d49baa6946c14cb283d90a5/out/doc/plantuml/RDCU_Equipe8/RDCU_Service_Monitoring/RDCU_Service_Monitoring.png)
 ### **RDCU-CU08** - 
 ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU8/RDCU_CU8.png)
 ### **RDCU-CU09** - 
@@ -1213,7 +1213,7 @@ Tous les diagrammes représentés dans les RDTQ correspondent à des éléments 
 ## Vues architecturales de type composant et connecteur
 ### Vue #1
 >#### Présentation primaire
-![VueComposantConnecteurDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/Vues_Achitecturales_c&C/Presentation_primaire/Presentation_primaire.png)
+![VueComposantConnecteurDiagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/41f6aa48c32acf711d49baa6946c14cb283d90a5/out/doc/plantuml/Vues_Achitecturales_c&C/Presentation_primaire/Presentation_primaire.png)
 >#### Catalogue d'éléments
 |Élement|Description|lien vers document d'interfaces|
 |-------|-----------|-------------------------------|
