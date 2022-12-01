@@ -24,6 +24,7 @@ k --> ms2
  ms1 ..> equipe4: HTTP
  ms1 ..> equipe6 : HTTP
  ms1 ..> equipe8 : HTTP
+ equipe8 --> ms1 : HTTP
 ms1 --> IDatabase
 ms2 --> IDatabase
 IDatabase -- bd
