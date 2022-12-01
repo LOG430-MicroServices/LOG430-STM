@@ -1,5 +1,5 @@
 @startuml
-title RDTQ Modifiabilité : Augmenter la cohésion/Réduire le couplage
+title RDTQ Modifiabilité : Réduire le couplage
 
 actor ": Utilisateur" as user
 participant ": Controller" as controller
@@ -7,7 +7,7 @@ participant ": Route #1" as r1
 participant ": Route #2" as r2
 database ": MongoDB" as db
 
-note over user, r1: Tactique: Augmenter la cohésion/Réduire le couplage
+note over user, r1: Tactique: Encapsulate
 
 activate controller
 activate r2

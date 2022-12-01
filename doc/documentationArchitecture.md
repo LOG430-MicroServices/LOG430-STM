@@ -9,22 +9,95 @@
   - [OA-2. Validez si le transport par autobus est toujours plus rapide, peu importe l'heure de la journée](#oa-2-validez-si-le-transport-par-autobus-est-toujours-plus-rapide-peu-importe-lheure-de-la-journée)
 - [Cas d'utilisations](#cas-dutilisations)
     - [**CU01** - Veux comparer les temps de trajet.](#cu01---veux-comparer-les-temps-de-trajet)
+        - [CU01-D1 **Disponibilité**](#cu01-d1-disponibilité)
+      - [CU01-M1 **Modifiabilité**](#cu01-m1-modifiabilité)
+      - [CU01-P1 **Performance**](#cu01-p1-performance)
+      - [CU01-S1 **Sécurité**](#cu01-s1-sécurité)
+      - [CU01-T1 **Testabilité**](#cu01-t1-testabilité)
+      - [CU01-U1 **Usabilité**](#cu01-u1-usabilité)
+      - [CU01-I1 **Interopérabilité**](#cu01-i1-interopérabilité)
     - [**CU02** - Veux pouvoir mettre le chaos dans les microservices.](#cu02---veux-pouvoir-mettre-le-chaos-dans-les-microservices)
-    - [**CU03** - <span style="color:red">Vous devez proposer un nouveau cas d'utilisation</span>](#cu03---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU04** - Veux pouvoir s'authentifier ](#cu04---veux-pouvoir-s'authentifier)
-    - [**CU05** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>](#cu05---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU06** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>](#cu06---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU07** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>](#cu07---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU08** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>](#cu08---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU09** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>](#cu09---vous-devez-proposer-un-nouveau-cas-dutilisation)
-    - [**CU10** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation.</span>](#cu10---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU02-D1 **Disponibilité**](#cu02-d1-disponibilité)
+      - [CU02-M1 **Modifiabilité**](#cu02-m1-modifiabilité)
+      - [CU02-P1 **Performance**](#cu02-p1-performance)
+      - [CU02-S1 **Sécurité**](#cu02-s1-sécurité)
+      - [CU02-T1 **Testabilité**](#cu02-t1-testabilité)
+      - [CU02-U1 **Usabilité**](#cu02-u1-usabilité)
+      - [CU02-I1 **Interopérabilité**](#cu02-i1-interopérabilité)
+    - [**CU03** - Vous devez proposer un nouveau cas d'utilisation](#cu03---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU03-D1 **Disponibilité**](#cu03-d1-disponibilité)
+      - [CU03-M1 **Modifiabilité**](#cu03-m1-modifiabilité)
+      - [CU03-P1 **Performance**](#cu03-p1-performance)
+      - [CU03-S1 **Sécurité**](#cu03-s1-sécurité)
+      - [CU03-T1 **Testabilité**](#cu03-t1-testabilité)
+      - [CU03-U1 **Usabilité**](#cu03-u1-usabilité)
+      - [CU03-I1 **Interopérabilité**](#cu03-i1-interopérabilité)
+    - [**CU04** - Veux pouvoir s'authentifier.](#cu04---veux-pouvoir-sauthentifier)
+      - [CU04-D1 **Disponibilité**](#cu04-d1-disponibilité)
+      - [CU04-M1 **Modifiabilité**](#cu04-m1-modifiabilité)
+      - [CU04-P1 **Performance**](#cu04-p1-performance)
+      - [CU04-S1 **Sécurité**](#cu04-s1-sécurité)
+      - [CU04-T1 **Testabilité**](#cu04-t1-testabilité)
+      - [CU04-U1 **Usabilité**](#cu04-u1-usabilité)
+      - [CU04-I1 **Interopérabilité**](#cu04-i1-interopérabilité)
+    - [**CU05** - vous devez proposer un nouveau cas d'utilisation](#cu05---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU05-D1 **Disponibilité**](#cu05-d1-disponibilité)
+      - [CU05-M1 **Modifiabilité**](#cu05-m1-modifiabilité)
+      - [CU05-P1 **Performance**](#cu05-p1-performance)
+      - [CU05-S1 **Sécurité**](#cu05-s1-sécurité)
+      - [CU05-T1 **Testabilité**](#cu05-t1-testabilité)
+      - [CU05-U1 **Usabilité**](#cu05-u1-usabilité)
+      - [CU05-I1 **Interopérabilité**](#cu05-i1-interopérabilité)
+    - [**CU06** - vous devez proposer un nouveau cas d'utilisation](#cu06---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU06-D1 **Disponibilité**](#cu06-d1-disponibilité)
+      - [CU06-M1 **Modifiabilité**](#cu06-m1-modifiabilité)
+      - [CU06-P1 **Performance**](#cu06-p1-performance)
+      - [CU06-S1 **Sécurité**](#cu06-s1-sécurité)
+      - [CU06-T1 **Testabilité**](#cu06-t1-testabilité)
+      - [CU06-U1 **Usabilité**](#cu06-u1-usabilité)
+      - [CU06-I1 **Interopérabilité**](#cu06-i1-interopérabilité)
+    - [**CU07** - vous devez proposer un nouveau cas d'utilisation](#cu07---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU07-D1 **Disponibilité**](#cu07-d1-disponibilité)
+      - [CU07-M1 **Modifiabilité**](#cu07-m1-modifiabilité)
+      - [CU07-P1 **Performance**](#cu07-p1-performance)
+      - [CU07-S1 **Sécurité**](#cu07-s1-sécurité)
+      - [CU07-T1 **Testabilité**](#cu07-t1-testabilité)
+      - [CU07-U1 **Usabilité**](#cu07-u1-usabilité)
+      - [CU07-I1 **Interopérabilité**](#cu07-i1-interopérabilité)
+    - [**CU08** - vous devez proposer un nouveau cas d'utilisation](#cu08---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU08-D1 **Disponibilité**](#cu08-d1-disponibilité)
+      - [CU08-M1 **Modifiabilité**](#cu08-m1-modifiabilité)
+      - [CU08-P1 **Performance**](#cu08-p1-performance)
+      - [CU08-S1 **Sécurité**](#cu08-s1-sécurité)
+      - [CU08-T1 **Testabilité**](#cu08-t1-testabilité)
+      - [CU08-U1 **Usabilité**](#cu08-u1-usabilité)
+      - [CU08-I1 **Interopérabilité**](#cu08-i1-interopérabilité)
+    - [**CU09** - vous devez proposer un nouveau cas d'utilisation](#cu09---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU09-D1 **Disponibilité**](#cu09-d1-disponibilité)
+      - [CU09-M1 **Modifiabilité**](#cu09-m1-modifiabilité)
+      - [CU09-P1 **Performance**](#cu09-p1-performance)
+      - [CU09-S1 **Sécurité**](#cu09-s1-sécurité)
+      - [CU09-T1 **Testabilité**](#cu09-t1-testabilité)
+      - [CU09-U1 **Usabilité**](#cu09-u1-usabilité)
+      - [CU09-I1 **Interopérabilité**](#cu09-i1-interopérabilité)
+    - [**CU10** - vous devez proposer un nouveau cas d'utilisation.](#cu10---vous-devez-proposer-un-nouveau-cas-dutilisation)
+      - [CU10-D1 **Disponibilité**](#cu10-d1-disponibilité)
+      - [CU10-M1 **Modifiabilité**](#cu10-m1-modifiabilité)
+      - [CU10-P1 **Performance**](#cu10-p1-performance)
+      - [CU10-S1 **Sécurité**](#cu10-s1-sécurité)
+      - [CU10-T1 **Testabilité**](#cu10-t1-testabilité)
+      - [CU10-U1 **Usabilité**](#cu10-u1-usabilité)
+      - [CU10-I1 **Interopérabilité**](#cu10-i1-interopérabilité)
 - [Vue architecturale de contexte](#vue-architecturale-de-contexte)
   - [Présentation primaire](#présentation-primaire)
   - [Catalogue d'éléments](#catalogue-déléments)
-  - [<s>Diagramme de contexte</s> Pas nécessaire puisque c'est déja un vue de contexte](#sdiagramme-de-contextes-pas-nécessaire-puisque-cest-déja-un-vue-de-contexte)
   - [Guide de variabilité](#guide-de-variabilité)
+    - [Services Externes](#services-externes)
+    - [Base de Données pour l'authentification](#base-de-données-pour-lauthentification)
+    - [Ajout ou Retrait d'un microservice](#ajout-ou-retrait-dun-microservice)
   - [Raisonnement](#raisonnement)
-  - [<s>Vues associées</s> pas nécessaire puisque c'est la première vue que vous réalisé pour votre système.](#svues-associéess-pas-nécessaire-puisque-cest-la-première-vue-que-vous-réalisé-pour-votre-système)
+    - [Architecture Microservices](#architecture-microservices)
+    - [Patron Discovery](#patron-discovery)
 - [Conception axée sur les attributs de qualité](#conception-axée-sur-les-attributs-de-qualité)
   - [ADD-Disponibilité](#add-disponibilité)
     - [ADD-détection de faute](#add-détection-de-faute)
@@ -38,6 +111,7 @@
     - [ADD-Defer binding](#add-defer-binding)
   - [ADD-Performance](#add-performance)
     - [ADD-Contrôler la demande en ressources](#add-contrôler-la-demande-en-ressources)
+    - [ADD-Gérer les ressources](#add-gérer-les-ressources)
   - [ADD-Sécurité](#add-sécurité)
     - [ADD-Détecter les attaques](#add-détecter-les-attaques)
     - [ADD-Résister aux attaques](#add-résister-aux-attaques)
@@ -53,16 +127,15 @@
     - [ADD-Localiser](#add-localiser)
     - [ADD-Gérer les interfaces](#add-gérer-les-interfaces)
 - [Réalisation des cas d'utilisation](#réalisation-des-cas-dutilisation)
-    - [**RDCU-CU01** - Veux comparer les temps de trajet.](#rdcu-cu1--)
-   
+    - [**RDCU-CU01** - Veux comparer les temps de trajet.](#rdcu-cu01---veux-comparer-les-temps-de-trajet)
     - [**RDCU-CU02** - Veux pouvoir mettre le chaos dans les services en mode.](#rdcu-cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode)
     - [**RDCU-CU03**](#rdcu-cu03)
-    - [**RDCU-CU04** -](#rdcu-cu04--)
-    - [**RDCU-CU05** -Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route](#rdcu-cu05--)
-    - [**RDCU-CU06** -Veux informer le mainteneur sur le status de vie des microservices](#rdcu-cu06--)
-    - [**RDCU-CU07** -Veux pouvoir informer le mainteneur sur l’état interne d’un service (exemple l’état du CPU)](#rdcu-cu07--)
-    - [**RDCU-CU08** -Veux avoir le temps d’un trajet en autobus](#rdcu-cu08--)
-    - [**RDCU-CU09** -Veux avoir le temps de trajet en auto](#rdcu-cu09--)
+    - [**RDCU-CU04** - Veux pouvoir s'authentifier](#rdcu-cu04---veux-pouvoir-sauthentifier)
+    - [**RDCU-CU05** -](#rdcu-cu05--)
+    - [**RDCU-CU06** -](#rdcu-cu06--)
+    - [**RDCU-CU07** -](#rdcu-cu07--)
+    - [**RDCU-CU08** -](#rdcu-cu08--)
+    - [**RDCU-CU09** -](#rdcu-cu09--)
     - [**RDCU-CU10** -](#rdcu-cu10--)
 - [Réalisation des attributs de qualité](#réalisation-des-attributs-de-qualité)
   - [RDAQ-Disponibilité](#rdaq-disponibilité)
@@ -87,7 +160,7 @@
     - [RDTQ-Récupérer d'une attaque](#rdtq-récupérer-dune-attaque)
     - [Relation entre les éléments architectuale et les exigences de sécurité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-sécurité)
   - [RDAQ-Testabilité](#rdaq-testabilité)
-    - [RDTQ-Contrôle et observe l'état du système[](https://file%2B.vscode-resource.vscode-cdn.net/Users/yvanross/sources/log430/LOG430-STM/doc/documentationArchitecture.md#add-usabilit%C3%A9)](#rdtq-contrôle-et-observe-létat-du-système)
+    - [RDTQ-Contrôle et observe l'état du système](#rdtq-contrôle-et-observe-létat-du-système)
     - [RDTQ-limiter la complexité](#rdtq-limiter-la-complexité)
     - [Relation entre les éléments architectuale et les exigences de testabilité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-testabilité)
   - [RDAQ-Usabilité](#rdaq-usabilité)
@@ -106,8 +179,7 @@
     - [Vue #1](#vue-1-1)
     - [Vue #2...](#vue-2-1)
   - [Vues architecturales de type allocation](#vues-architecturales-de-type-allocation)
-    - [Vue #1](#vue-1-2)
-    - [Vue #2 ...](#vue-2-)
+    - [Vue #1 - Déploiement pour authentification](#vue-1---déploiement-pour-authentification)
 - [Conclusion](#conclusion)
 - [Documentation des interfaces](#documentation-des-interfaces)
 # Page titre
@@ -662,7 +734,7 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
   |[CU01-M1](#cu01-m1-modifiabilité) | |
   |[CU02-M1](#cu02-m1-modifiabilité) | |
   |[CU03-M1](#cu03-m1-modifiabilité) | |
-  |[CU04-M1](#cu04-m1-modifiabilité) | |
+  |[CU04-M1](#cu04-m1-modifiabilité) | Ce service est concerné|
   |[CU05-M1](#cu05-m1-modifiabilité) | |
   |[CU06-M1](#cu06-m1-modifiabilité) | |
   |[CU07-M1](#cu07-m1-modifiabilité) | |
@@ -675,44 +747,38 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Split Module</li>| réduit le couts de changement future | N/A |H|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons choisi cette tatique parce que si le module en cours de modification comprend de nombreuses fonctionnalités, le coût de la modification sera probablement élevé. Pour remedier a cette situation, nous pouvons affiner le module en plusieurs modules plus petits ce qui devrait réduire le coût moyen des changements futurs</span>
 
 ### ADD-[Augmenter la cohésion](#rdtq-augmenter-la-cohésion)
 <div class="concept modifiabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Increase Sementic Coherance</li> | <li>Si la responsabilité de A et B dans un module n'a pas le même objectif, elles doivent être placées dans des modules différents</li>| N/A |H|H|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span> La tactique choisie est <i>Increase Sementic coherance</i>. Nous avons choisi cette tactique pour que chaque module possède ses responsabilités ce qui crée un code facile à comprendre et à modifier. De plus, cette tactique garde les dépenses séparées ce qui réduit le couplage et augmente la cohésion. </span>
 
 ### ADD-[Réduire le couplage](#rdtq-réduire-le-couplage)
 <div class="concept modifiabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Encapsulate</li>| <li>réduit la probabilité qu'un changement fait dans un module ce propage dans un autre module.</li>| limite les façons dont les responsabilités externes peuvent interagir avec le module |H|M|
+| <li>Refactor</li>|<li>Réduis la duplication de code.</li>| Couteux|M|H|
+| <li>Abstract common service</li>|<li>Toute modification du service se produirait en un seul endroit</li>| Peut devenir très complexe à implémenter |B|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>La tactique choisie est <i>Encapsulate</i>. Nous avons choisie cette tactique pour réduire la probabilité qu'un changement fait dans un module ce propage dans un autre module. </span>
 
 ### ADD-[Defer binding](#rdtq-defer-binding)
 <div class="concept modifiabilite">
 
 |Concept de design| Pour | Contre| Valeur | Cout|
 |-----------------|------|-------|--------|-----|
-| <li>tactique 1</li>|avantages| désavantages|M|M|
-| <li>tactique 2</li>|avantages| désavantages|M|M|
-| <li>tactique 3</li>|avantages| désavantages|M|M|
+| <li>Defer binding</li>|<li>laisser les ordinateurs gérer un changement autant que possible réduira presque toujours le coût de ce changement</li>| <li>Mettre en place les mécanismes pour faciliter cette liaison tardive a tendance à être plus coûteux</li>|M|M|
 </div>
-<span style="color:red">Quelle tactique avez vous choisi et pourquoi?</span>
+<span>Nous avons utilisé la tactique de defer binding pour liers des valuers au moment du déploiment de l'application en utilisant un fichier de ressource (.env) .</span>
 
 
 ## ADD-[Performance](#rdaq-performance)
@@ -984,24 +1050,24 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Modifiabilité](#add-modifiabilité)
 
   ###  [RDTQ-Réduire la taille des modules](#add-réduire-la-taille-des-modules)
-  <span style="color:red">nom de la tactique</span>
+  <span>Split module</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+   ![Diagramme - Réduire la taille des modules](../out\doc\plantuml\auth\Modifiabilite-ReduceModuleSize\Modifiabilite-ReduceModuleSize.png)
 
   ### [RDTQ-Augmenter la cohésion](#add-augmenter-la-cohésion)
-  <span style="color:red">nom de la tactique</span>
+  <span>Increase semantic coherance</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+   ![Diagramme - Augmenter la cohésion](../out\doc\plantuml\auth\Modifiabilite-AugmenteCohesion\Modifiabilite-AugmenteCohesion.png)
 
   ### [RDTQ-Réduire le couplage](#add-réduire-le-couplage)
-  <span style="color:red">nom de la tactique</span>
+  <span >Encapsulation</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+   ![Diagramme - Réduire le couplage](../out\doc\plantuml\auth\Modifiabilite-RéduireCouplage\Modifiabilite-RéduireCouplage.png)
 
   ### [RDTQ-Defer binding](#add-defer-binding)
-  <span style="color:red">nom de la tactique</span>
+  <span>Defer Binding</span>
   
-  <span style="color:red">Diagramme(s) de séquence ou autre information pertinente démontrant la réalisation de(s) tactique(s)</span>
+   ![Diagramme - Defer binding](../out\doc\plantuml\auth\Modifiabilite-DeferBinding\Modifiabilite-DeferBinding.png)
 
   ### Relation entre les éléments architectuale et les exigences de disponibilité
 |Identifiant|Éléments|Description de la responabilité|

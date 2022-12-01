@@ -2,12 +2,12 @@
 title RDTQ Modifiabilité: Defer binding
 
 participant ": fichier .env" as env
-participant ": server.js" as mw
+participant ": middleWare" as mw
 participant ": Controller" as controller
 participant ": Route #1" as r1
 
 
-note over env, mw: Tactique: Defer Binding
+note over env, mw: Tactique: Defer Binding (Ressource file)
 
 activate env
 activate mw
