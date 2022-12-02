@@ -185,7 +185,7 @@
 # Page titre
 
 # Introduction
-Un service offert aux utilisateurs comporte souvent plusieurs microservices qui travaillent ensemble afin d'offrir un produit. Il est difficile de visualiser la complexité que cela peut engendrer en ce qui a trait à l'implémentation. Chaque système est unique et doit atteindre des objectifs de qualité différents. C'est pourquoi l'architecture d'un projet est cruciale dans sa réalisation et sa compréhension.
+Un service offert aux utilisateurs comporte souvent plusieurs microservices qui travaillent ensemble. Il est difficile de visualiser la complexité que cela peut engendrer en ce qui a trait à l'implémentation. Chaque système est unique et doit atteindre des objectifs de qualité différents. C'est pourquoi la bonne architecture d'un projet est cruciale pour la réalisation et la compréhension des clients externes.
 
 Il est important pour un usager du transport en commun de savoir quel moyen de transport est le plus rapide entre la voiture et l'autobus. C'est pourquoi le but de ce laboratoire est de créer un système, fait de plusieurs microservices, qui offre une comparaison entre les deux moyens de transports.
 
