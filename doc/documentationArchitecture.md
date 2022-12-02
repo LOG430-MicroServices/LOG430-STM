@@ -1096,16 +1096,9 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ### Relation entre les éléments architecturaux et les exigences de performance
 |Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-P1](#cu01-p1-performance) | |
-  |[CU02-P1](#cu02-p1-performance) | |
-  |[CU03-P1](#cu03-p1-performance) | |
-  |[CU04-P1](#cu04-p1-performance) | |
-  |[CU05-P1](#cu05-p1-performance) | |
-  |[CU06-P1](#cu06-p1-performance) | |
-  |[CU07-P1](#cu07-p1-performance) | |
-  |[CU08-P1](#cu08-p1-performance) | |
-  |[CU09-P1](#cu09-p1-performance) | |
-  |[CU10-P1](#cu10-p1-performance) | |
+|[CU04-P1](#cu04-p1-performance) | Utilisateur | Attends un service d'authentification performant|
+|[CU04-P1](#cu04-p1-performance) | JWTService | Fais les gestion des token d'utilisateurs|
+|[CU04-P1](#cu04-p1-performance) | Cache | Garde en mémoire rapide les token|
 
 ## RDAQ-[Sécurité](#add-sécurité)
 
@@ -1128,16 +1121,9 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
   ### Relation entre les éléments architecturaux et les exigences de sécurité
 |Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
-  |[CU01-P1](#cu01-s1-sécurité) | |
-  |[CU02-P1](#cu02-s1-sécurité) | |
-  |[CU03-P1](#cu03-s1-sécurité) | |
-  |[CU04-P1](#cu04-s1-sécurité) | |
-  |[CU05-P1](#cu05-s1-sécurité) | |
-  |[CU06-P1](#cu06-s1-sécurité) | |
-  |[CU07-P1](#cu07-s1-sécurité) | |
-  |[CU08-P1](#cu08-s1-sécurité) | |
-  |[CU09-P1](#cu09-s1-sécurité) | |
-  |[CU10-P1](#cu10-s1-sécurité) | |
+|[CU04-S1](#cu04-s1-sécurité) | Utilisateur | S'enregistrer et s'authentifier dans le système |
+|[CU04-S1](#cu04-s1-sécurité) | Authentification Controller | Gestion de la sécurité dans l'authentification |
+  
   
 ## RDAQ-[Testabilité](#add-testabilité)
 
