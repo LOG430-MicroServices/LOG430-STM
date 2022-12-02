@@ -185,7 +185,12 @@
 # Page titre
 
 # Introduction
->TODO: insérer votre introduction
+Un service offert aux utilisateurs comporte souvent plusieurs microservices qui travaillent ensemble afin d'offrir un produit. Il est difficile de visualiser la complexité que cela peut engendrer en ce qui a trait à l'implémentation. Chaque système est unique et doit atteindre des objectifs de qualité différents. C'est pourquoi l'architecture d'un projet est cruciale dans sa réalisation et sa compréhension.
+
+Il est important pour un usager du transport en commun de savoir quel moyen de transport est le plus rapide entre la voiture et l'autobus. C'est pourquoi le but de ce laboratoire est de créer un système, fait de plusieurs microservices, qui offre une comparaison entre les deux moyens de transports.
+
+Le laboratoire comporte 3 tâches, soit la réalisation de cas d'utilisation, la rédaction de la documentation architecturale et finalement l'intégration de microservices faits par d'autres équipes. Ces trois parties permettront d'avoir un système complet et fonctionnel qui possède tous les attributs de qualité. La réalisation des CU choisis par l'équipe, soit l'authentification et le chaos monkey, s'est faite à l'aide de Javascript. La rédaction de l'architecture s'est faite tout au long du développement afin de bien refléter les changements du système. L'intégration s'est faite à la toute fin, avec les cas d'utilisation réalisés par les autres équipes.
+
 
 # Scénario d'objectif d'affaire
 ## OA-1. Faciliter le recrutement des nouveaux chargés de laboratoire.
