@@ -1021,26 +1021,28 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Disponibilité](#add-disponibilité) 
 
   ###  [RDTQ-Détection de faute](#add-détection-de-faute)
-  <span>Heartbeat</span>
 
   ![Diagramme - Détection de faute](../out/doc/plantuml/auth/Disponibility-DetectFaults/Disponibility-DetectFaults.png)
 
+  <span>La copie principale envoie des messages périodiques à la copie secondaire, appelés Heartbeats, de manière à lui faire savoir qu'elle est toujours disponible.</span>
+
   ### [RDTQ-Préparation et réparation](#add-préparation-et-réparation)
-  
-<span>Redondance passive</span>
 
   ![Diagramme - Préparation et réparation](../out/doc/plantuml/auth/Disponibility-Repair/Disponibility-Repair.png)
 
+  <span>La redondance passive est utilisée afin de toujours avoir une copie de l'application qui est prête à recevoir les appels.</span>
+
   ### [RDTQ-Réintroduction](#add-réintroduction)
 
-  <span>State Resynchronization</span>
-
   ![Diagramme - Réintroduction](../out/doc/plantuml/auth/Disponibility-Reintroduce/Disponibility-Reintroduce.png)
+
+  Si la copie secondaire devient principale, elle doit démarrer une autre copie secondaire afin de maintenir deux copies en tout temps.
   
   ### [RDTQ-Prévention des fautes](#add-prévention-des-fautes) 
-  <span>Increase Competence Set</span>
 
   ![Diagramme - Prévention des fautes](../out/doc/plantuml/chaos/Disponibility-PreventFaults/RDTQ%20Disponbilit%C3%A9%20%20%20Pr%C3%A9vention%20de%20fautes.png)
+
+  Afin de permettre au Chaosmonkey de fournir des services même si le ServiceDiscovery est indisponible, on garde la liste de services en cache.
 
   ### Relation entre les éléments architecturaux et les exigences de disponibilité
  |Identifiant|Éléments|Description de la responsabilité|
@@ -1055,8 +1057,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ## RDAQ-[Modifiabilité](#add-modifiabilité)
 
   ###  [RDTQ-Réduire la taille des modules](#add-réduire-la-taille-des-modules)
-  <span>Split module</span>
-  
+
    ![Diagramme - Réduire la taille des modules](../out/doc/plantuml/auth/Modifiabilite-ReduceModuleSize/Modifiabilite-ReduceModuleSize.png)
 
   ### [RDTQ-Augmenter la cohésion](#add-augmenter-la-cohésion)
@@ -1070,23 +1071,15 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
    ![Diagramme - Réduire le couplage](../out/doc/plantuml/auth/Modifiabilite-RéduireCouplage/Modifiabilite-RéduireCouplage.png)
 
   ### [RDTQ-Defer binding](#add-defer-binding)
-  <span>Defer Binding</span>
   
    ![Diagramme - Defer binding](../out/doc/plantuml/auth/Modifiabilite-DeferBinding/Modifiabilite-DeferBinding.png)
 
+   <span>L'utilisation d'un fichier de configuration permet d'attendre plus longtemps avant d'insérer certaines valeurs dans des variables afin de réduire le couplage.</span>
+
   ### Relation entre les éléments architecturaux et les exigences de disponibilité
 |Identifiant|Éléments|Description de la responsabilité|
-|-----------|--------|-------------------------------|
- |[CU01-M1](#cu01-m1-modifiabilité) | N/A| 
- |[CU02-M1](#cu02-m1-modifiabilité) | |  
- |[CU03-M1](#cu03-m1-modifiabilité) | N/A|  
- |[CU04-M1](#cu04-m1-modifiabilité) | |  
- |[CU05-M1](#cu05-m1-modifiabilité) | N/A|  
- |[CU06-M1](#cu06-m1-modifiabilité) | N/A|  
- |[CU07-M1](#cu07-m1-modifiabilité) | N/A|  
- |[CU08-M1](#cu08-m1-modifiabilité) | N/A|  
- |[CU09-M1](#cu09-m1-modifiabilité) | N/A|  
- |[CU10-M1](#cu10-m1-modifiabilité) | N/A|  
+|-----------|--------|-------------------------------|  
+ |[CU04-M1](#cu04-m1-modifiabilité) |Fichier .env | Contient des informations qui seront utilisées par l'application au moment de l'exécution
   
 ## RDAQ-[Performance](#add-performance)          
 
@@ -1102,8 +1095,8 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 |Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
 |[CU04-P1](#cu04-p1-performance) | Utilisateur | Attends un service d'authentification performant|
-|[CU04-P1](#cu04-p1-performance) | JWTService | Fais les gestion des token d'utilisateurs|
-|[CU04-P1](#cu04-p1-performance) | Cache | Garde en mémoire rapide les token|
+|[CU04-P2](#cu04-p2-performance) | JWTService | Fais les gestion des token d'utilisateurs|
+|[CU04-P3](#cu04-p3-performance) | Cache | Garde en mémoire rapide les token|
 
 ## RDAQ-[Sécurité](#add-sécurité)
 
@@ -1127,7 +1120,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 |Identifiant|Éléments|Description de la responsabilité|
 |-----------|--------|-------------------------------|
 |[CU04-S1](#cu04-s1-sécurité) | Utilisateur | S'enregistrer et s'authentifier dans le système |
-|[CU04-S1](#cu04-s1-sécurité) | Authentification Controller | Gestion de la sécurité dans l'authentification |
+|[CU04-S2](#cu04-s2-sécurité) | Authentification Controller | Gestion de la sécurité dans l'authentification |
   
   
 ## RDAQ-[Testabilité](#add-testabilité)
@@ -1141,28 +1134,19 @@ Tactique: Limiter la Complexité Structurelle
   ### Relation entre les éléments architecturaux et les exigences de testabilité
   |Identifiant| Éléments         | Description de la responsabilité                               |
   |------------------|---------------------------------------------------------------|-------------------------------|
-  |[CU01-T1](#cu01-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU02-T1](#cu02-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU03-T1](#cu03-t1-testabilité) | N/A              | N/A                                                           |
   |[CU04-T1](#cu04-t1-testabilité) | Authentification | Microservice d'authentification et d'autorisation du système |
-  |[CU05-T1](#cu05-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU06-T1](#cu06-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU07-T1](#cu07-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU08-T1](#cu08-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU09-T1](#cu09-t1-testabilité) | N/A              | N/A                                                           |
-  |[CU10-T1](#cu10-t1-testabilité) | N/A              | N/A                                                           |
 
 ## RDAQ-[Usabilité](#add-usabilité)
 
   ### [RDTQ-Supporter l'initiative de l'usager](#add-supporter-linitiative-de-lusager)
-  <span>Aggréger</span>
 
   ![Diagramme - Supporter l'initiative de l'usager](../out/doc/plantuml/chaos/Usability-SupportUserInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20de%20l'usager.png)
+  <span>Afin de faciliter l'utilisation de l'application, on permet à l'usager de combiner plusieurs requêtes.</span>
   
   ### [RDTQ-Supporter l'initiative du système](#add-supporter-linitiative-du-système)
-  <span>Maintain System Model</span>
 
   ![Diagramme - Supporter l'initiative du système](../out/doc/plantuml/chaos/Usability-SupportSystemInitiative/Convivialit%C3%A9%20%20%20Supporter%20l'initiative%20du%20syst%C3%A8me.png)
+  <span>On garde l'état d'une tâche afin de pouvoir informer l'utilisateur sur sa progression.</span>
 
   ### Relation entre les éléments architecturaux et les exigences d'usabilité
 |Identifiant|Éléments|Description de la responsabilité|
@@ -1174,14 +1158,13 @@ Tactique: Limiter la Complexité Structurelle
  ## RDAQ-[Interopérabilité](#add-interopérabilité)
 
   ### [RDTQ-Localiser](#add-localiser)
-  <span>Discover Service</span>
 
   ![Diagramme - Localiser](../out/doc/plantuml/chaos/Interoperability-Locate/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20Localiser.png)
   
   ### [RDTQ-Gérer les interfaces](#add-gérer-les-interfaces)
-  <span>Tailor Interface</span>
 
   ![Diagramme - Gérer les interfaces](../out/doc/plantuml/chaos/Interoperability-ManageInterfaces/RDTQ%20Interop%C3%A9rabilit%C3%A9%20%20%20G%C3%A9rer%20les%20interfaces.png)
+  <span>Afin de permettre à différents utilisateurs d'avoir accès à différentes fonctionnalités sur les mêmes routes, on ajoute la fonctionnalité d'aggrégation aux "Powerusers".</span>
   
   ### Relation entre les éléments architecturaux et les exigences d'interopérabilité
 |Identifiant|Éléments|Description de la responsabilité|
@@ -1213,7 +1196,6 @@ Plusieurs contrôleurs on été développés dans chaque microservice afin de s�
 Des interfaces internes ont été définies au niveau du Chaosmonkey afin de pouvoir insérer des services "Mock" puisque les autres microservices n'étaient pas disponibles pendant la majorité du temps de développement de l'application.
 >#### Vues associées
 Tous les diagrammes représentés dans les RDTQ correspondent à des éléments présents dans cette vue.
-### Vue #2...
 
 ## Vues architecturales de type composant et connecteur
 ### Vue #1
@@ -1240,7 +1222,6 @@ La vue composant connecteur, présente tous les éléments obligatoires pour fai
 En ce qui concerne la vue composant et connecteur, nous avons pris pour hypothèse qu’on a une seule copie du micro service d’authentification qui reçoit les requetés provenant des utilisateurs et du micro service chaos. Dépendamment de la requête, il va soit interroger la base de données pour vérifier leur authenticité soit transférer la requête vers interface public qui lui connait tous les autres micro services externes associés. 
 >#### Vues associées
 [Document d'interface Authentification](interface-authentification.md)
-### Vue #2...
 
 ## Vues architecturales de type allocation
 ### Vue #1 - Déploiement pour authentification
