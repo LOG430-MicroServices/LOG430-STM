@@ -189,7 +189,7 @@ Un service offert aux utilisateurs comporte souvent plusieurs microservices qui 
 
 Il est important pour un usager du transport en commun de savoir quel moyen de transport est le plus rapide entre la voiture et l'autobus. C'est pourquoi le but de ce laboratoire est de créer un système, fait de plusieurs microservices, qui offre une comparaison entre les deux moyens de transports.
 
-Le laboratoire comporte 3 tâches, soit la réalisation de cas d'utilisation, la rédaction de la documentation architecturale et finalement l'intégration de microservices faits par d'autres équipes. Ces trois parties permettront d'avoir un système complet et fonctionnel qui possède tous les attributs de qualité. La réalisation des CU choisis par l'équipe, soit l'authentification et le chaos monkey, s'est faite à l'aide de Javascript. La rédaction de l'architecture s'est faite tout au long du développement afin de bien refléter les changements du système. L'intégration s'est faite à la toute fin, avec les cas d'utilisation réalisés par les autres équipes.
+Le laboratoire comporte 3 tâches, soit la réalisation de cas d'utilisation, la rédaction de la documentation architecturale et finalement l'intégration de microservices faits par d'autres équipes. Ces trois parties permettront d'avoir un système complet et fonctionnel qui possède tous les attributs de qualité. La réalisation des CU choisis par l'équipe, soit l'authentification et le chaos monkey, s'est faite à l'aide de Javascript et de Typescript. La rédaction de l'architecture s'est faite tout au long du développement afin de bien refléter les changements du système. L'intégration s'est faite à la toute fin, avec les cas d'utilisation réalisés par les autres équipes.
 
 
 # Scénario d'objectif d'affaire
@@ -1247,7 +1247,13 @@ En ce qui a trait aux décisions par rapport à la vue allocation, ici, nous avo
 
 
 # Conclusion
->TODO: insérer votre conclusion
+Dans ce projet, nous avons eu à développer plusieurs fonctionnalités dans le contexte d'une architecture composée de microservices ayant pour but principal de fournir un service de calcul de temps de trajet. 
+
+Nous avons échangé de la documentation avec d'autres équipes afin d'assurer la compatibilité des différents services, et avons implémenté et intégré plusieurs tactiques architecturales afin d'assurer le respect des différents attributs de qualité.
+
+Nous avons ainsi obtenu deux microservices stables, simples à comprendre, et efficaces.
+
+Ce projet nous a permis de développer une application relativement complexe dans un contexte s'apparentant au développement logiciel dans une grosse entreprise, où différents départements travaillent sur un même projet en échangeant leur documentation publique. 
 
 
 N'oubliez pas d'effacer les TODO et ce texte et de générer une version PDF de ce document pour votre remise finale.
