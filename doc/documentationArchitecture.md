@@ -1364,11 +1364,7 @@ Nous avons échangé de la documentation avec d'autres équipes afin d'assurer l
 
 Nous avons ainsi obtenu deux microservices stables, simples à comprendre, et efficaces.
 
-Ce projet nous a permis de développer une application relativement complexe dans un contexte s'apparentant au développement logiciel dans une grosse entreprise, où différents départements travaillent sur un même projet en échangeant leur documentation publique. 
-
-
-N'oubliez pas d'effacer les TODO et ce texte et de générer une version PDF de ce document pour votre remise finale.
-Créer un tag git avec la commande "git tag rapport1"
+Ce projet nous a permis de développer une application relativement complexe dans un contexte s'apparentant au développement logiciel dans une grosse entreprise, où différents départements travaillent sur un même projet en échangeant leur documentation publique.
 
 
 # Documentation des interfaces
