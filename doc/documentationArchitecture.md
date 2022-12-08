@@ -24,14 +24,7 @@
       - [CU02-T1 **Testabilité**](#cu02-t1-testabilité)
       - [CU02-U1 **Usabilité**](#cu02-u1-usabilité)
       - [CU02-I1 **Interopérabilité**](#cu02-i1-interopérabilité)
-    - [**CU03** - Vous devez proposer un nouveau cas d'utilisation](#cu03---vous-devez-proposer-un-nouveau-cas-dutilisation)
-      - [CU03-D1 **Disponibilité**](#cu03-d1-disponibilité)
-      - [CU03-M1 **Modifiabilité**](#cu03-m1-modifiabilité)
-      - [CU03-P1 **Performance**](#cu03-p1-performance)
-      - [CU03-S1 **Sécurité**](#cu03-s1-sécurité)
-      - [CU03-T1 **Testabilité**](#cu03-t1-testabilité)
-      - [CU03-U1 **Usabilité**](#cu03-u1-usabilité)
-      - [CU03-I1 **Interopérabilité**](#cu03-i1-interopérabilité)
+    - [**CU03** - Pas de CU03](#cu03-NA)
     - [**CU04** - Veux pouvoir s'authentifier.](#cu04---veux-pouvoir-sauthentifier)
       - [CU04-D1 **Disponibilité**](#cu04-d1-disponibilité)
       - [CU04-M1 **Modifiabilité**](#cu04-m1-modifiabilité)
@@ -80,14 +73,7 @@
       - [CU09-T1 **Testabilité**](#cu09-t1-testabilité)
       - [CU09-U1 **Usabilité**](#cu09-u1-usabilité)
       - [CU09-I1 **Interopérabilité**](#cu09-i1-interopérabilité)
-    - [**CU10** - vous devez proposer un nouveau cas d'utilisation.](#cu10---vous-devez-proposer-un-nouveau-cas-dutilisation)
-      - [CU10-D1 **Disponibilité**](#cu10-d1-disponibilité)
-      - [CU10-M1 **Modifiabilité**](#cu10-m1-modifiabilité)
-      - [CU10-P1 **Performance**](#cu10-p1-performance)
-      - [CU10-S1 **Sécurité**](#cu10-s1-sécurité)
-      - [CU10-T1 **Testabilité**](#cu10-t1-testabilité)
-      - [CU10-U1 **Usabilité**](#cu10-u1-usabilité)
-      - [CU10-I1 **Interopérabilité**](#cu10-i1-interopérabilité)
+    - [**CU10** - Pas de CU10](#cu10-NA)
 - [Vue architecturale de contexte](#vue-architecturale-de-contexte)
   - [Présentation primaire](#présentation-primaire)
   - [Catalogue d'éléments](#catalogue-déléments)
@@ -307,40 +293,7 @@ N/A
 - Découvrir le service
 
 
-### **CU03** - <span style="color:red">Vous devez proposer un nouveau cas d'utilisation</span>
-
-**Acteurs externe:** 
-
-**Précondition:** 
-
-**Évènement déclencheur:** 
-
-**Scénario**
-
-**Évènement résultant:**
-
-**Postcondition:** 
-
-**Cas alternatifs:**
-
-**Attributs de qualité**
-
-#### CU03-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU03-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-
-**Commentaires:**
+### **CU03** - <span>Pas de CU03</span>
 
 ### **CU04** - Veux pouvoir s'authentifier.
 
@@ -719,44 +672,11 @@ Retour à l'étape 2
 
 **Commentaires:**
 
-### **CU10** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation.</span>
-
-**Acteurs externe:** 
-
-**Précondition:** 
-
-**Évènement déclencheur:** 
-
-**Scénario**
-
-**Évènement résultant:**
-
-**Postcondition:** 
-
-**Cas alternatifs:**
-
-**Attributs de qualité**
-
-#### CU10-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU10-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-
-**Commentaires:**
+### **CU10** - <span>Pas de CU10</span>
 
 # Vue architecturale de contexte
 
-<span style="color:red">Utiliser le gabarit suivant: https://wiki.sei.cmu.edu/confluence/display/SAD/Template%3AArchitectureViewTemplate</span>
+
 ## Présentation primaire
 ![Diagramme de contexte](./assets/context-diagram.png)
 ## Catalogue d'éléments
@@ -791,9 +711,9 @@ A partir des qualités associées à tous vos cas d'utilisation, réaliser un mi
   |Identifiant|Description|
   |-----------|------------|
   |[CU01-D1](#cu01-d1-disponibilité)| N/A|
-  |[CU02-D1](#cu02-d1-disponibilité)| Ce CU est concerné par la sous-catégorie "Prévention des fautes" |
+  |[CU02-D1](#cu02-d1-disponibilité)| Ce service est concerné par la sous-catégorie "Prévention des fautes" |
   |[CU03-D1](#cu03-d1-disponibilité) |N/A
-  |[CU04-D1](#cu04-d1-disponibilité)| Ce CU est concerné par les sous-catégories "Détection de faute", "Préparation et réparation", et "Réintroduction" |
+  |[CU04-D1](#cu04-d1-disponibilité)| Ce service est concerné par les sous-catégories "Détection de faute", "Préparation et réparation", et "Réintroduction" |
   |[CU05-D1](#cu05-d1-disponibilité) |N/A
   |[CU06-D1](#cu06-d1-disponibilité) |N/A
   |[CU07-D1](#cu07-d1-disponibilité) |N/A
@@ -1110,8 +1030,7 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/Service_trajet_rdcu/Service_trajet_rdcu.png)
 ### [**RDCU-CU02**](#cu02---veux-pouvoir-mettre-le-chaos-dans-les-services-en-mode) - Veux pouvoir mettre le chaos dans les services en mode.
 ![DiagrammeSéquenceChaosMonkey](https://github.com/LOG430-MicroServices/LOG430-STM/blob/db770d083bcb9df3bec865126db4e2f82900424b/out/doc/plantuml/chaos/DiagrammeS%C3%A9quence_CU02/DiagrammeSequenceCU02.png)
-### [**RDCU-CU03**](#cu03)  
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
+
 ### [**RDCU-CU04**](#cu04---veux-pouvoir-s'authentifier) - Veux pouvoir s'authentifier
 ![DiagrammeSéquenceAuthentification](https://github.com/LOG430-MicroServices/LOG430-STM/blob/6e9ba49ebaee64a86782a90e38347d89530386c0/out/doc/plantuml/auth/DiagrammeS%C3%A9quence_CU04/DiagrammeS%C3%A9quence_CU04.png)
 ### **RDCU-CU05** - 
@@ -1124,8 +1043,6 @@ La deuxième raison est qu'il a été facile d'implémenter cette tactique pour
 ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU8/RDCU_CU8.png)
 ### **RDCU-CU09** - 
 ![Diagramme](https://github.com/LOG430-MicroServices/LOG430-STM/blob/7171e70fa977ab73ffbbc2199c3a855b0d2a67da/out/doc/plantuml/RDCU_Equipe6/RDCU_CU9/RDCU_CU9.png)
-### **RDCU-CU10** - 
-<span style="color:red">Diagramme(s) de séquence démontrant la réalisation de ce cas d'utilisation</span>
 
 # Réalisation des attributs de qualité
 
@@ -1373,15 +1290,6 @@ Ce projet nous a permis de développer une application relativement complexe dan
 |-----------------------|----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|------------------------------------------------------------------------|
 | Chaos Monkey          | Ce microservice a été créé pour perturber les autres microservices, en simulant une panne. Il est utilisé pour les tuer, forçant la bonne implémentation du redémarrage ainsi que de s'assurer de la disponibilité du service.                                                                                                                                                                                                        |     [Document d'interface Chaosmonkey](interface-chaosmonkey.md) |                                                                    |
 | Authentification      | Ce service d'authentification et d'autorisation sert à verifier que l'utilisation du système par un utilisateur est sincère est justifié. L'utilisateur concerné doit alors s'authentifier dans le système avant de pouvoir effectuer une action, qui devra être autorisée par ce microservice. Les informations essentielles seront stockées dans une base de données afin d'assurer la persistence et la continuité du service. | [Document d'interface Authentification](interface-authentification.md) |
-
-Les catalogues d'élément devraient être des tableaux qui contiennent la description des éléments en plus d'un lien vers la documentation de l'interface de ceux-ci.
-Je vous suggère d'utiliser un document par interface pour vous faciliter la tâche. Il sera ainsi plus facile de distribuer la documentation d'une interface aux équipes en ayant besoin.
-La documentation des interfaces de vos éléments doit se faire en utilisant le [gabarit suivant](template-interface.md).
-
-Voici quelques exemples de documentation d'interface utilisant ce gabarit:
-- https://wiki.sei.cmu.edu/confluence/display/SAD/OpcPurchaseOrderService+Interface+Documentation
-- https://wiki.sei.cmu.edu/confluence/display/SAD/OpcOrderTrackingService+Interface+Documentation
-- https://wiki.sei.cmu.edu/confluence/display/SAD/WebServiceBroker+Interface
 
 <!--stackedit_data:
 eyJoaXN0b3J5IjpbNDU4ODUwNzIwXX0=
