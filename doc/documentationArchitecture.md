@@ -9,7 +9,7 @@
   - [OA-2. Validez si le transport par autobus est toujours plus rapide, peu importe l'heure de la journée](#oa-2-validez-si-le-transport-par-autobus-est-toujours-plus-rapide-peu-importe-lheure-de-la-journée)
 - [Cas d'utilisations](#cas-dutilisations)
     - [**CU01** - Veux comparer les temps de trajet.](#cu01---veux-comparer-les-temps-de-trajet)
-        - [CU01-D1 **Disponibilité**](#cu01-d1-disponibilité)
+      - [CU01-D1 **Disponibilité**](#cu01-d1-disponibilité)
       - [CU01-M1 **Modifiabilité**](#cu01-m1-modifiabilité)
       - [CU01-P1 **Performance**](#cu01-p1-performance)
       - [CU01-S1 **Sécurité**](#cu01-s1-sécurité)
@@ -40,7 +40,7 @@
       - [CU04-T1 **Testabilité**](#cu04-t1-testabilité)
       - [CU04-U1 **Usabilité**](#cu04-u1-usabilité)
       - [CU04-I1 **Interopérabilité**](#cu04-i1-interopérabilité)
-    - [**CU05** - vous devez proposer un nouveau cas d'utilisation](#cu05---vous-devez-proposer-un-nouveau-cas-dutilisation)
+    - [**CU05** - Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route.](#cu05---avoir-une-intercommunication-entre-microservices-à-laide-dune-source-unique-de-découverte-de-route)
       - [CU05-D1 **Disponibilité**](#cu05-d1-disponibilité)
       - [CU05-M1 **Modifiabilité**](#cu05-m1-modifiabilité)
       - [CU05-P1 **Performance**](#cu05-p1-performance)
@@ -48,7 +48,7 @@
       - [CU05-T1 **Testabilité**](#cu05-t1-testabilité)
       - [CU05-U1 **Usabilité**](#cu05-u1-usabilité)
       - [CU05-I1 **Interopérabilité**](#cu05-i1-interopérabilité)
-    - [**CU06** - vous devez proposer un nouveau cas d'utilisation](#cu06---vous-devez-proposer-un-nouveau-cas-dutilisation)
+    - [**CU06** - Veux informer le mainteneur sur le status de vie des microservices](#cu06---veux-informer-le-mainteneur-sur-le-status-de-vie-des-microservices)
       - [CU06-D1 **Disponibilité**](#cu06-d1-disponibilité)
       - [CU06-M1 **Modifiabilité**](#cu06-m1-modifiabilité)
       - [CU06-P1 **Performance**](#cu06-p1-performance)
@@ -56,7 +56,7 @@
       - [CU06-T1 **Testabilité**](#cu06-t1-testabilité)
       - [CU06-U1 **Usabilité**](#cu06-u1-usabilité)
       - [CU06-I1 **Interopérabilité**](#cu06-i1-interopérabilité)
-    - [**CU07** - vous devez proposer un nouveau cas d'utilisation](#cu07---vous-devez-proposer-un-nouveau-cas-dutilisation)
+    - [**CU07** - Veux pouvoir informer le mainteneur sur l’état interne d’un service (exemple l’état du CPU)](#cu07---veux-pouvoir-informer-le-mainteneur-sur-létat-interne-dun-service-exemple-létat-du-cpu)
       - [CU07-D1 **Disponibilité**](#cu07-d1-disponibilité)
       - [CU07-M1 **Modifiabilité**](#cu07-m1-modifiabilité)
       - [CU07-P1 **Performance**](#cu07-p1-performance)
@@ -64,7 +64,7 @@
       - [CU07-T1 **Testabilité**](#cu07-t1-testabilité)
       - [CU07-U1 **Usabilité**](#cu07-u1-usabilité)
       - [CU07-I1 **Interopérabilité**](#cu07-i1-interopérabilité)
-    - [**CU08** - vous devez proposer un nouveau cas d'utilisation](#cu08---vous-devez-proposer-un-nouveau-cas-dutilisation)
+    - [**CU08** - Veux avoir le temps d’un trajet en autobus](#cu08---veux-avoir-le-temps-dun-trajet-en-autobus)
       - [CU08-D1 **Disponibilité**](#cu08-d1-disponibilité)
       - [CU08-M1 **Modifiabilité**](#cu08-m1-modifiabilité)
       - [CU08-P1 **Performance**](#cu08-p1-performance)
@@ -72,7 +72,7 @@
       - [CU08-T1 **Testabilité**](#cu08-t1-testabilité)
       - [CU08-U1 **Usabilité**](#cu08-u1-usabilité)
       - [CU08-I1 **Interopérabilité**](#cu08-i1-interopérabilité)
-    - [**CU09** - vous devez proposer un nouveau cas d'utilisation](#cu09---vous-devez-proposer-un-nouveau-cas-dutilisation)
+    - [**CU09** - Veux avoir le temps de trajet en auto](#cu09---veux-avoir-le-temps-de-trajet-en-auto)
       - [CU09-D1 **Disponibilité**](#cu09-d1-disponibilité)
       - [CU09-M1 **Modifiabilité**](#cu09-m1-modifiabilité)
       - [CU09-P1 **Performance**](#cu09-p1-performance)
@@ -143,41 +143,40 @@
     - [RDTQ-Préparation et réparation](#rdtq-préparation-et-réparation)
     - [RDTQ-Réintroduction](#rdtq-réintroduction)
     - [RDTQ-Prévention des fautes](#rdtq-prévention-des-fautes)
-    - [Relation entre les éléments architectuale et les exigences de disponibilité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-disponibilité)
+    - [Relation entre les éléments architecturaux et les exigences de disponibilité](#relation-entre-les-éléments-architecturaux-et-les-exigences-de-disponibilité)
   - [RDAQ-Modifiabilité](#rdaq-modifiabilité)
     - [RDTQ-Réduire la taille des modules](#rdtq-réduire-la-taille-des-modules)
     - [RDTQ-Augmenter la cohésion](#rdtq-augmenter-la-cohésion)
     - [RDTQ-Réduire le couplage](#rdtq-réduire-le-couplage)
     - [RDTQ-Defer binding](#rdtq-defer-binding)
-    - [Relation entre les éléments architectuale et les exigences de disponibilité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-disponibilité-1)
+    - [Relation entre les éléments architecturaux et les exigences de disponibilité](#relation-entre-les-éléments-architecturaux-et-les-exigences-de-disponibilité-1)
   - [RDAQ-Performance](#rdaq-performance)
     - [RDTQ-Contrôler la demande en ressources](#rdtq-contrôler-la-demande-en-ressources)
     - [RDTQ-Gérer les ressources](#rdtq-gérer-les-ressources)
+    - [Relation entre les éléments architecturaux et les exigences de performance](#relation-entre-les-éléments-architecturaux-et-les-exigences-de-performance)
   - [RDAQ-Sécurité](#rdaq-sécurité)
     - [RDTQ-Détecter les attaques](#rdtq-détecter-les-attaques)
     - [RDTQ-Résister aux attaques](#rdtq-résister-aux-attaques)
     - [RDTQ-Réagir aux attaques](#rdtq-réagir-aux-attaques)
     - [RDTQ-Récupérer d'une attaque](#rdtq-récupérer-dune-attaque)
-    - [Relation entre les éléments architectuale et les exigences de sécurité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-sécurité)
+    - [Relation entre les éléments architecturaux et les exigences de sécurité](#relation-entre-les-éléments-architecturaux-et-les-exigences-de-sécurité)
   - [RDAQ-Testabilité](#rdaq-testabilité)
     - [RDTQ-Contrôle et observe l'état du système](#rdtq-contrôle-et-observe-létat-du-système)
     - [RDTQ-limiter la complexité](#rdtq-limiter-la-complexité)
-    - [Relation entre les éléments architectuale et les exigences de testabilité](#relation-entre-les-éléments-architectuale-et-les-exigences-de-testabilité)
+    - [Relation entre les éléments architecturaux et les exigences de testabilité](#relation-entre-les-éléments-architecturaux-et-les-exigences-de-testabilité)
   - [RDAQ-Usabilité](#rdaq-usabilité)
     - [RDTQ-Supporter l'initiative de l'usager](#rdtq-supporter-linitiative-de-lusager)
     - [RDTQ-Supporter l'initiative du système](#rdtq-supporter-linitiative-du-système)
-    - [Relation entre les éléments architectuale et les exigences d'usabilité](#relation-entre-les-éléments-architectuale-et-les-exigences-dusabilité)
+    - [Relation entre les éléments architecturaux et les exigences d'usabilité](#relation-entre-les-éléments-architecturaux-et-les-exigences-dusabilité)
   - [RDAQ-Interopérabilité](#rdaq-interopérabilité)
     - [RDTQ-Localiser](#rdtq-localiser)
     - [RDTQ-Gérer les interfaces](#rdtq-gérer-les-interfaces)
-    - [Relation entre les éléments architectuale et les exigences d'interopérabilité](#relation-entre-les-éléments-architectuale-et-les-exigences-dinteropérabilité)
+    - [Relation entre les éléments architecturaux et les exigences d'interopérabilité](#relation-entre-les-éléments-architecturaux-et-les-exigences-dinteropérabilité)
 - [Vues architecturales](#vues-architecturales)
   - [Vues architecturales de type Module](#vues-architecturales-de-type-module)
     - [Vue #1](#vue-1)
-    - [Vue #2...](#vue-2)
   - [Vues architecturales de type composant et connecteur](#vues-architecturales-de-type-composant-et-connecteur)
     - [Vue #1](#vue-1-1)
-    - [Vue #2...](#vue-2-1)
   - [Vues architecturales de type allocation](#vues-architecturales-de-type-allocation)
     - [Vue #1 - Déploiement pour authentification](#vue-1---déploiement-pour-authentification)
 - [Conclusion](#conclusion)
@@ -204,24 +203,23 @@ Le laboratoire comporte 3 tâches, soit la réalisation de cas d'utilisation, la
 ### **CU01** - Veux comparer les temps de trajet.
 
 **Acteurs externe:** 
-- **Chargé de laboratoire:** Veut pouvoir faire la correction de chaque cas d'utilisation.
+- Utilisateur: Veut pouvoir comparer le temps de trajet en automobile versus autobus.
 
 **Précondition:** 
-- Tous les microservices sont opérationnels
+- L’utilisateur est connecté sur le site Web de comparaisons de trajet.
+- Le microservice de comparaison temps de trajet est opérationnel.
 
 **Évènement déclencheur:** 
-- La documentation pour ce cas d'utilisation est terminé et l'équipe demande au chargé de laboratoire de corriger celle-ci. 
-- L'intégration est complété et l'équipe demande au chargé de laboratoire de corriger celle-ci
-- L'implémentation est complété est l'équipe demande au chargé de laboratoire de corriger celle-ci.
+- L’utilisateur veut se rendre à un endroit en particulier et se demande quel est le meilleur trajet en termes de temps.
 
 **Scénario**
     
-1. Le (chargé de laboratoire) CL sélectionne une intersection de départ et une intersection d'arrivée, ainsi que le taux de rafraichissement de la prise de mesure.
-2. Le CL sélectionne le [service externe](service-externe.md) qu'il veut utiliser pour faire la comparaison des temps de trajet avec les donnés temps réel de la STM.
-3. Le système affiche un graphique du temps de déplacement et met celui-ci à jour selon le taux de rafraichissement.
+1. L’utilisateur sélectionne une intersection de départ et une intersection d'arrivée, ainsi que le taux de rafraichissement de la prise de mesure.
+2. L’utilisateur sélectionne le service externe qu'il veut utiliser pour faire la comparaison des temps de trajet avec les donnés temps réel de la STM.
+3. Le système affiche un graphique du temps de déplacement et met celui-ci à jour selon le taux de rafraîchissement.
 
 **Évènement résultant:**
-- Le système affiche un graphique des comparatifs de temps de déplacement qui se met à jours selon le taux de rafraichissement.
+- Le système affiche un graphique des comparatifs de temps de déplacement qui se met à jour selon le taux de rafraîchissement.
 
 **Postcondition:**  
 - Le système est en attente d'une nouvelle commande de l'utilisateur
@@ -232,25 +230,25 @@ Le laboratoire comporte 3 tâches, soit la réalisation de cas d'utilisation, la
 
 **Attributs de qualité**
 Documenter l'ensemble des attributs de qualité qui s'appliquent à ce scénario en terme d'objectif et de mesure.    
-##### CU01-D1 [**Disponibilité**](#add-disponibilité)
-<span style="color:red"> Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+#### CU01-D1 [**Disponibilité**](#add-disponibilité)
+- (SC) Détecter les fautes
+- (SC) Préparation et réparation
 #### CU01-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Augmenter la cohésion
+- (SC) Différer la liaison
 #### CU01-P1 [**Performance**](#add-performance)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Contrôler la demande de ressources
 #### CU01-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Résister aux attaques
 #### CU01-T1 [**Testabilité**](#add-testabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Limiter la complexité
 #### CU01-U1 [**Usabilité**](#add-testabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Supporter l’initiative du système
+- (SC) Supporter l’initiative de l’utilisateur
 #### CU01-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- N/A
 
 **Commentaires:**
-
-- <span style="color:red">Quel sont vos remarques/commentaires par rapport à ce scénario</span>
-
 ### **CU02** - Veux pouvoir mettre le chaos dans les microservices.
 
 **Acteurs externe:** 
@@ -433,178 +431,291 @@ N/A
 - Utilisation du service de découverte pour communiquer avec les autres micro services.
 
 
-### **CU05** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
+### **CU05** - Avoir une intercommunication entre microservices à l’aide d’une source unique de découverte de route.
 
 **Acteurs externe:** 
+- **Chargé de laboratoire :** Devra corriger ce cas d'utilisation.
+- **Service d'authentification :** Devra authentifier les requêtes externes.
+- **Tout autre microservice :** Seront en mesure de s'enregistrer.
+- **Tout autre microservice :** Seront en mesure de faire rediriger leurs requêtes vers le bon microservice.
 
-**Précondition:** 
+**Précondition:**
+- Tous les microservices sont opérationnels.
 
 **Évènement déclencheur:** 
+- La documentation pour ce cas d'utilisation est terminé et l'équipe demande au chargé de laboratoire de corriger celle-ci.
+- L'intégration est complété et l'équipe demande au chargé de laboratoire de corriger celle-ci
 
 **Scénario**
 
-**Évènement résultant:**
+1. Dans Postman, le chargé de laboratoire entre une route qu'il aimerait accéder.
+2. La réponse en provenance de la route est renvoyée.
 
-**Postcondition:** 
+**Évènement résultant:**
+- La réponse en provenance de la route est renvoyée.
+
+**Postcondition:**
+- Le système est en attente d'une nouvelle requête.
 
 **Cas alternatifs:**
+1. Scénario 1
+    - a) Le chargé de laboratoire n'a pas attaché un jeton d'authentification à sa requête.
+    - b) Le chargée de laboratoire a entré une route qui n'existe pas.
+2. Scénario 2
+    - a) Le microservice est indisponible.
 
 **Attributs de qualité**
 
 #### CU05-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Détection de faute :** Ping/Echo
+- **Préparation et réparation :** Rollback
+
 #### CU05-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Réduire la taille des modules :** Split Module
+- **Augmenter la cohésion :** Increase semantic coherence
+
 #### CU05-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Contrôler la demande en ressources :** Manage sampling rate
+
 #### CU05-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Résister aux attaques :** Authenticate actors
+- **Réagir aux attaques :** Lock computer
+
 #### CU05-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Limiter la complexité :** Limit structural complexity
+
 #### CU05-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+
 #### CU05-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- **Locate :** Discover service
 
 **Commentaires:**
 
-### **CU06** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
+### **CU06** - Veux informer le mainteneur sur le status de vie des microservices
 
 **Acteurs externe:** 
+Les autres microservices
 
 **Précondition:** 
+- Connaitre l'adresse du Discovery Service
+- Tous les microservices sont abonnés au microservice "Service Discovery"
+- Le microservice de Monitoring connait la route du microservice "Service Discovery"
 
 **Évènement déclencheur:** 
+- Le système doit s'assurer que l'ensemble de ses microservices sont fonctionnels.
 
 **Scénario**
 
+1- Le microservice de Monitoring questionne le microservice "Service Discovery" sur les routes à ping
+
+2- Le microservice "Service Discovery" retourne les routes des autres microservices
+
+3- Le microservice de Monitoring questionne les microservices à savoir s'ils sont actifs (ping)
+
+4- Les microservices répondent (echo) avec un 200 OK
+
 **Évènement résultant:**
+- Les microservices communiquent leur statut de vie
+- Connaître quel microservice est en panne
 
 **Postcondition:** 
+S'assurer que les microservices sont fonctionnels.
 
 **Cas alternatifs:**
+
+4a- Un microservice ne répond pas.
+
+5- Le microservice de Monitoring envoie un message d'alerte pour informer tous les microservices qu'un miscroservice est en panne.
 
 **Attributs de qualité**
 
 #### CU06-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détection des fautes
+- (SC) Prévention des fautes
+- (SC) Préparation et réparation
+- (SC) Réintroduction
 #### CU06-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Réduire la taille des modules
+- (SC) Augmenter la cohésion
+- (SC) Réduire le couplage
 #### CU06-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Contrôler la demande en resources
 #### CU06-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
-#### CU06-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détecter les attaques
+- (SC) Résister aux attaques
+- (SC) Réagir aux attaques
+- (SC) Récupérer d'une attaque
+
+#### CU06-T1 [**Testabilité**](#add-testabilité)
+- (SC) Controle et observe l’état du système
 #### CU06-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Supporter l'initiative du système
 #### CU06-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Gérer les interfaces.
 
 **Commentaires:**
 
-### **CU07** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
+### **CU07** - Veux pouvoir informer le mainteneur sur l’état interne d’un service (exemple l’état du CPU)
 
 **Acteurs externe:** 
+- Le microservice "Service Discovery"
+- Le microservice de Monitoring
+- Les machines virtuelles
 
 **Précondition:** 
+- Connaitre l'adresse du Discovery Service
+- Tous les microservices sont abonnés au microservice "Service Discovery"
+- Le microservice "Service Discovery" connaît les routes des machines virtuelles
 
 **Évènement déclencheur:** 
+- Après s'être authentifié au système, le microservice de Monitoring vérifie si toute les machines virtuelles des autres microservices sont en bon état
 
 **Scénario**
 
+1- Après s'être authentifié au système, le microservice de Monitoring va récupérer les adresses IP des autres microservices
+
+2- Le microservice de Monitoring demande aux VMs des statistiques sur leur composantes internes (CPU, GPU, RAM, etc...)
+
+3- Si les statistiques sont normales, alors le microservice envoi un message pour lui indiquer que les machines virtuelles sur lesquelles les autres microservices sont hébergés vont bien et sont prêtes à être exploitées
+
+4- Le système continue alors son bon fonctionnement
+
 **Évènement résultant:**
+- Le système connait quelle(s) machine(s) virtuelle(s) est/sont dysfonctionnelle(s)
+- Le système ne se lancera pas tant que les machines virtuelles des autres microservices ne sont pas fonctionnelles
 
 **Postcondition:** 
+- S'assurer que les machines virtuelles et leurs composantes sont fonctionnelles
 
 **Cas alternatifs:**
+
+3a.1- Les statistiques d'une ou de plusieurs machines virtuelles sont anormales, indiquant un dysfonctionnement
+
+3a.2- Le système indique aux machines virtuelles dysfonctionnelles de redémarrer
+
+Retour à l'étape 2
 
 **Attributs de qualité**
 
 #### CU07-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détection des fautes
+- (SC) Prévention des fautes
+- (SC) Préparation et réparation
+- (SC) Réintroduction
 #### CU07-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Réduire la taille d'une module
+- (SC) Augmenter la cohésion
+- (SC) Réduir le couplage
+- (SC) Defer binding
 #### CU07-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Contrôler la demande en resources
 #### CU07-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détecter les attaques
+- (SC) Résister aux attaques
+- (SC) Réagir aux attaques
+- (SC) Récupérer d'une attaque
 #### CU07-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Controle et observe l’état du système.
 #### CU07-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- Supporter l'initiative du système
 #### CU07-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- Gérer les interfaces
 
 **Commentaires:**
 
-### **CU08** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
+### **CU08** - Veux avoir le temps d’un trajet en autobus
 
 **Acteurs externe:** 
+- Utilisateur: Veut pouvoir obtenir le temps d'un trajet en auto
 
 **Précondition:** 
+- Les microservices de proxy, d'authentification et d'obtention de trajet sont opérationnels
+- Le serveur du service externe est opérationnel.
 
 **Évènement déclencheur:** 
+- L'utilisateur veut le temps d’un trajet en auto.
 
 **Scénario**
+1. L'utilisateur sélectionne une adresse de départ et une adresse d'arrivée.
+2. L'utilisateur sélectionne le service externe qu'il veut utiliser pour obtenir le temps de trajet.
+3. Le système affiche le temps de trajet le plus court.
 
 **Évènement résultant:**
+- Le système affiche les trois temps de trajet les plus courts avec des départs proches, ainsi que leurs heures de départ.
 
 **Postcondition:** 
+- Le système est en attente d'une nouvelle commande de l'utilisateur.
 
 **Cas alternatifs:**
+- N/A
 
 **Attributs de qualité**
 
 #### CU08-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détecter les fautes
+- (SC) Préparation et réparation
 #### CU08-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Augmenter la cohésion
+- (SC) Réduire le couplage
+- (SC) Différer la liaison
 #### CU08-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- N/A
 #### CU08-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Résister aux attaques
 #### CU08-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Limiter la complexité
 #### CU08-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Supporter l’initiative système
 #### CU08-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- N/A
 
 **Commentaires:**
 
-### **CU09** - <span style="color:red">vous devez proposer un nouveau cas d'utilisation</span>
+### **CU09** - Veux avoir le temps de trajet en auto
 
-**Acteurs externe:** 
+**Acteurs externe:**
+- Utilisateur: Veut pouvoir obtenir le temps d'un trajet en auto
 
 **Précondition:** 
+- Les microservices de proxy, d'authentification et d'obtention de trajet sont opérationnels
+- Le serveur du service externe est opérationnel.
 
 **Évènement déclencheur:** 
+- L'utilisateur veut le temps d’un trajet en auto.
 
 **Scénario**
+1. L'utilisateur sélectionne une adresse de départ et une adresse d'arrivée.
+2. L'utilisateur sélectionne le service externe qu'il veut utiliser pour obtenir le temps de trajet.
+3. Le système affiche le temps de trajet le plus court.
 
 **Évènement résultant:**
+- Le système affiche le temps de trajet le plus court.
 
 **Postcondition:** 
+- Le système est en attente d'une nouvelle commande de l'utilisateur.
 
 **Cas alternatifs:**
+- N/A
 
 **Attributs de qualité**
 
 #### CU09-D1 [**Disponibilité**](#add-disponibilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Détecter les fautes
+- (SC) Préparation et réparation
 #### CU09-M1 [**Modifiabilité**](#add-modifiabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Augmenter la cohésion
+- (SC) Réduire le couplage
+- (SC) Différer la liaison
 #### CU09-P1 [**Performance**](#add-performance) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- N/A
 #### CU09-S1 [**Sécurité**](#add-sécurité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Résister aux attaques
 #### CU09-T1 [**Testabilité**](#add-testabilité) 
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Limiter la complexité
 #### CU09-U1 [**Usabilité**](#add-usabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- (SC) Supporter l’initiative système
 #### CU09-I1 [**Interopérabilité**](#add-interopérabilité)
-<span style="color:red">Définir l'exigence que qualité associé à ce scénario ou N/a</span>
+- N/A
 
 **Commentaires:**
 
